@@ -19,29 +19,57 @@
             --deep-red: #D32F2F;
             --cream: #FFF8F0;
         }
-
-        body { font-family: 'Poppins', sans-serif; background-color: white; overflow-x: hidden; }
-        h1, h2, h3, h4, .serif { font-family: 'Playfair Display', serif; }
-
-        /* Perfect Gradient from your Image */
+    
+        * {
+            box-sizing: border-box;
+        }
+    
+        html, body {
+            width: 100%;
+            overflow-x: hidden !important;
+        }
+    
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+        }
+    
+        h1, h2, h3, h4, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+    
+        /* Gradient */
         .bg-gradient-main {
             background: linear-gradient(135deg, #FF4500 0%, #FF8C00 100%);
         }
+    
         .text-gradient {
             background: linear-gradient(to right, #FF4500, #FFD700);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
-        /* Card Styles */
+    
+        /* Floating animation safe */
+        .float {
+            animation: float 4s ease-in-out infinite;
+            max-width: 100%;
+        }
+    
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+    
+        /* Card hover */
         .service-circle-card {
-            border: 4px solid white;
-            box-shadow: 0 10px 30px rgba(255, 69, 0, 0.2);
             transition: transform 0.3s;
         }
-        .service-circle-card:hover { transform: translateY(-10px); }
-
-        /* Custom Button */
+    
+        .service-circle-card:hover {
+            transform: translateY(-6px);
+        }
+    
+        /* Buttons */
         .btn-pill {
             background: linear-gradient(to right, #FF8C00, #FFD700);
             color: white;
@@ -49,21 +77,25 @@
             box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4);
             transition: all 0.3s;
         }
-        .btn-pill:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(255, 140, 0, 0.6); }
-
-        /* Form Style */
+    
+        .btn-pill:hover {
+            transform: scale(1.04);
+        }
+    
+        /* Inputs */
         .custom-input {
             background: #FFF8E1;
             border: 1px solid #FFE0B2;
-            transition: all 0.3s;
+            width: 100%;
         }
-        .custom-input:focus { border-color: #FF8C00; outline: none; background: white; }
-
-        /* Floating Animation for Icons */
-        .float { animation: float 4s ease-in-out infinite; }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-
-        /* Quick Service Button */
+    
+        .custom-input:focus {
+            border-color: #FF8C00;
+            outline: none;
+            background: white;
+        }
+    
+        /* Quick button */
         .quick-btn {
             background: linear-gradient(to right, #ff9100, #ffb300);
             color: white;
@@ -72,8 +104,71 @@
             transition: 0.3s;
             border: 2px solid white;
         }
-        .quick-btn:hover { background: white; color: #ff6d00; border-color: #ff6d00; }
+    
+        .quick-btn:hover {
+            background: white;
+            color: #ff6d00;
+            border-color: #ff6d00;
+        }
+    
+        /* AOS FIX */
+        [data-aos] {
+            overflow: hidden;
+        }
+    
+        /* Responsive Fixes */
+        @media (max-width: 768px) {
+    
+            header {
+                text-align: center;
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+                border-radius: 0 0 60px 0;
+            }
+    
+            header h1 {
+                font-size: 2.2rem;
+                line-height: 1.3;
+            }
+    
+            header img {
+                width: 85%;
+                margin: auto;
+            }
+    
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+    
+            .rounded-full {
+                border-radius: 1.5rem !important;
+            }
+    
+            .aspect-square {
+                aspect-ratio: auto;
+            }
+    
+            .w-80, .h-80 {
+                width: 100% !important;
+                height: auto !important;
+            }
+    
+            .absolute {
+                max-width: 100%;
+            }
+    
+            iframe {
+                height: 350px;
+            }
+    
+            footer div {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
     </style>
+    
 </head>
 <body>
 
@@ -454,7 +549,12 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, once: true });
-    </script>
+        AOS.init({
+          duration: 700,
+          once: true,
+          disable: 'mobile'
+        });
+        </script>
+        
 </body>
 </html>
