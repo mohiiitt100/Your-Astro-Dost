@@ -24,7 +24,7 @@
     
         html, body {
             width: 100%;
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            overflow-x: hidden;
         }
     
         body {
@@ -37,22 +37,13 @@
         /* Gradient */
         .bg-gradient-main { background: linear-gradient(135deg, #FF4500 0%, #FF8C00 100%); }
     
-        .text-gradient {
-            background: linear-gradient(to right, #FF4500, #FFD700);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    
         /* Animations */
         .float { animation: float 4s ease-in-out infinite; max-width: 100%; }
         @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-8px); }
         }
-    
-        .service-circle-card { transition: transform 0.3s; }
-        .service-circle-card:hover { transform: translateY(-6px); }
-    
+
         /* Inputs */
         .custom-input {
             background: #FFF8E1;
@@ -73,27 +64,32 @@
             border-radius: 50px;
             transition: 0.3s;
             border: 2px solid white;
-            width: 100%; /* Full width on mobile */
+            width: 100%;
+            display: block;
+            text-align: center;
         }
         .quick-btn:hover {
             background: white;
             color: #ff6d00;
             border-color: #ff6d00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(255, 145, 0, 0.2);
         }
         
-        /* Mobile Menu Transition */
+        /* Mobile Menu */
         #mobile-menu {
-            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
             max-height: 0;
             opacity: 0;
             overflow: hidden;
         }
         #mobile-menu.open {
-            max-height: 400px;
+            max-height: 500px;
             opacity: 1;
+            padding-bottom: 1rem;
         }
 
-        /* Responsive Iframe */
+        /* Responsive Map */
         .map-container iframe {
             width: 100%;
             height: 100%;
@@ -108,8 +104,8 @@
             <span><i class="fas fa-circle text-[6px] md:text-[8px] mr-1 md:mr-2 text-yellow-300"></i> Get Your Ex Love Back</span>
             <span><i class="fas fa-circle text-[6px] md:text-[8px] mr-1 md:mr-2 text-yellow-300"></i> Palm Reading</span>
             <span><i class="fas fa-circle text-[6px] md:text-[8px] mr-1 md:mr-2 text-yellow-300"></i> Face Reading</span>
-            <span><i class="fas fa-circle text-[6px] md:text-[8px] mr-1 md:mr-2 text-yellow-300"></i> Horoscope Matching</span>
-            <span><i class="fas fa-circle text-[6px] md:text-[8px] mr-1 md:mr-2 text-yellow-300"></i> Psychic Reading</span>
+            <span><i class="fas fa-circle text-[6px] md:text-[8px] mr-1 md:mr-2 text-yellow-300"></i> Tarot Reading</span>
+            <span><i class="fas fa-circle text-[6px] md:text-[8px] mr-1 md:mr-2 text-yellow-300"></i> Numerology</span>
         </div>
     </div>
 
@@ -126,7 +122,7 @@
             <div class="hidden lg:flex space-x-8 font-medium text-gray-700 text-sm uppercase">
                 <a href="#" class="hover:text-orange-600 transition">Home</a>
                 <a href="#about" class="hover:text-orange-600 transition">About Guru Ji</a>
-                <a href="#services" class="hover:text-orange-600 transition">Services</a>
+                <a href="#pricing" class="hover:text-orange-600 transition">Services</a>
                 <a href="#contact" class="hover:text-orange-600 transition">Contact</a>
             </div>
             
@@ -134,16 +130,16 @@
                 <i class="fas fa-phone-alt mr-2"></i> +91 79052 87701
             </a>
             
-            <button id="menu-btn" class="lg:hidden text-2xl text-orange-600 focus:outline-none">
+            <button id="menu-btn" class="lg:hidden text-2xl text-orange-600 focus:outline-none p-2">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
 
-        <div id="mobile-menu" class="lg:hidden bg-white border-t border-gray-100">
-            <div class="px-4 pt-2 pb-4 space-y-1">
+        <div id="mobile-menu" class="lg:hidden bg-white border-t border-gray-100 shadow-lg">
+            <div class="px-4 pt-2 space-y-2">
                 <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-md">Home</a>
                 <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-md">About Guru Ji</a>
-                <a href="#services" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-md">Services</a>
+                <a href="#pricing" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-md">Services</a>
                 <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-md">Contact</a>
                 <a href="tel:+917905287701" class="block w-full text-center mt-4 px-3 py-3 bg-orange-600 text-white rounded-md font-bold">
                     <i class="fas fa-phone-alt mr-2"></i> Call Now
@@ -173,7 +169,7 @@
                     </div>
                     <div class="px-4 md:px-6">
                         <span class="block text-[10px] md:text-xs font-bold text-gray-400 uppercase">Call Us Today At</span>
-                        <span class="block text-base md:text-xl font-bold whitespace-nowrap">+91 98803 39009</span>
+                        <a href="tel:+919880339009" class="block text-base md:text-xl font-bold whitespace-nowrap hover:text-orange-800 transition">+91 98803 39009</a>
                     </div>
                 </div>
             </div>
@@ -209,16 +205,11 @@
                         <div class="bg-white rounded-xl p-5 md:p-6 h-full border border-orange-100 group-hover:border-orange-300">
                             <div class="flex items-start justify-between mb-4">
                                 <div class="w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center text-orange-600 text-xl shadow-inner"><i class="fas fa-star-of-david"></i></div>
-                                <div class="text-right">
-                                    <span class="block text-2xl font-bold text-gray-800">₹399</span>
-                                    <span class="text-[10px] text-gray-400 line-through">₹999</span>
-                                </div>
+                                <div class="text-right"><span class="block text-2xl font-bold text-gray-800">₹399</span><span class="text-[10px] text-gray-400 line-through">₹999</span></div>
                             </div>
                             <h3 class="serif text-lg md:text-xl font-bold text-gray-800 mb-1">Whole Chart Analysis</h3>
                             <p class="text-xs text-gray-500 mb-6 border-b border-dashed border-gray-200 pb-4">Includes D1, D9, & D10 Charts Analysis</p>
-                            <a href="https://wa.me/917905287701?text=Namaste%20Guruji%2C%20I%20am%20interested%20in%20*Whole%20Chart%20Analysis*%20(Rs.399)." target="_blank" class="flex justify-between items-center bg-gray-50 hover:bg-orange-500 hover:text-white text-gray-700 font-bold py-3 px-5 rounded-xl transition-all">
-                                <span>Book Now</span> <i class="fab fa-whatsapp text-xl"></i>
-                            </a>
+                            <a href="https://wa.me/917905287701?text=Namaste%20Guruji%2C%20I%20am%20interested%20in%20*Whole%20Chart%20Analysis*%20(Rs.399)." target="_blank" class="flex justify-between items-center bg-gray-50 hover:bg-orange-500 hover:text-white text-gray-700 font-bold py-3 px-5 rounded-xl transition-all"><span>Book Now</span> <i class="fab fa-whatsapp text-xl"></i></a>
                         </div>
                     </div>
 
@@ -226,20 +217,15 @@
                         <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-5 md:p-6 h-full relative overflow-hidden">
                             <div class="flex justify-between items-start mb-4">
                                 <div class="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-300 to-orange-500 flex items-center justify-center text-white text-xl shadow-lg border-2 border-white/20"><i class="fas fa-crown"></i></div>
-                                <div class="text-right">
-                                    <span class="block text-3xl font-bold text-yellow-400 drop-shadow-md">₹1100</span>
-                                    <span class="text-xs text-gray-400 uppercase tracking-widest">Premium</span>
-                                </div>
+                                <div class="text-right"><span class="block text-3xl font-bold text-yellow-400 drop-shadow-md">₹1100</span><span class="text-xs text-gray-400 uppercase tracking-widest">Premium</span></div>
                             </div>
                             <h3 class="serif text-xl font-bold text-white mb-1">Premium Analysis</h3>
                             <p class="text-xs text-gray-300 mb-6 border-b border-dashed border-gray-600 pb-4">Complete Shodashvarga (D1 to D60)</p>
-                            <a href="https://wa.me/917905287701?text=Namaste%20Guruji%2C%20I%20am%20interested%20in%20*Premium%20Chart%20Analysis*%20(D1-D60)%20-%20Rs.1100." target="_blank" class="flex justify-between items-center bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-bold py-3 px-5 rounded-xl shadow-lg hover:shadow-orange-500/50 transition-all">
-                                <span>Book Priority Slot</span> <i class="fab fa-whatsapp text-xl animate-pulse"></i>
-                            </a>
+                            <a href="https://wa.me/917905287701?text=Namaste%20Guruji%2C%20I%20am%20interested%20in%20*Premium%20Chart%20Analysis*%20(D1-D60)%20-%20Rs.1100." target="_blank" class="flex justify-between items-center bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-bold py-3 px-5 rounded-xl shadow-lg hover:shadow-orange-500/50 transition-all"><span>Book Priority Slot</span> <i class="fab fa-whatsapp text-xl animate-pulse"></i></a>
                         </div>
                     </div>
 
-                    <div class="group bg-white rounded-2xl p-6 shadow-md border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                    <div class="group bg-white rounded-2xl p-6 shadow-md border border-gray-100" data-aos="fade-up">
                         <div class="flex items-center justify-between mb-4">
                             <div class="w-12 h-12 rounded-full bg-blue-50 text-blue-500 flex items-center justify-center text-xl"><i class="fas fa-bolt"></i></div>
                             <span class="text-xl font-bold text-blue-600">₹150</span>
@@ -249,7 +235,7 @@
                         <a href="https://wa.me/917905287701?text=Namaste%20Guruji%2C%20I%20want%20a%20*Quick%20Consultation*%20(4-5%20Mins)%20-%20Rs.150." target="_blank" class="block text-center w-full py-2 rounded-lg border border-blue-100 text-blue-600 font-bold hover:bg-blue-600 hover:text-white transition">Start Chat</a>
                     </div>
 
-                    <div class="group bg-white rounded-2xl p-6 shadow-md border border-gray-100" data-aos="fade-up" data-aos-delay="300">
+                    <div class="group bg-white rounded-2xl p-6 shadow-md border border-gray-100" data-aos="fade-up">
                         <div class="flex items-center justify-between mb-4">
                             <div class="w-12 h-12 rounded-full bg-pink-50 text-pink-500 flex items-center justify-center text-xl"><i class="fas fa-heart"></i></div>
                             <span class="text-xl font-bold text-pink-600">₹399</span>
@@ -257,6 +243,49 @@
                         <h3 class="serif text-lg font-bold text-gray-800">Matchmaking</h3>
                         <p class="text-xs text-gray-500 mb-4">Kundali Milan • Compatibility</p>
                         <a href="https://wa.me/917905287701?text=Namaste%20Guruji%2C%20I%20am%20interested%20in%20*Matchmaking/Kundali%20Milan*." target="_blank" class="block text-center w-full py-2 rounded-lg border border-pink-100 text-pink-600 font-bold hover:bg-pink-600 hover:text-white transition">Check Compatibility</a>
+                    </div>
+
+                    <div class="group bg-white rounded-2xl p-6 shadow-md border border-gray-100" data-aos="fade-up">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center text-xl"><i class="fas fa-layer-group"></i></div>
+                            <div class="text-right">
+                                <span class="text-xl font-bold text-purple-600">₹100</span>
+                                <span class="text-[10px] block text-gray-400">/Question</span>
+                            </div>
+                        </div>
+                        <h3 class="serif text-lg font-bold text-gray-800">Tarot Reading</h3>
+                        <p class="text-xs text-gray-500 mb-4">Instant Yes/No & Guidance</p>
+                        <a href="https://wa.me/917905287701?text=Namaste%20Guruji%2C%20I%20am%20interested%20in%20*Tarot%20Reading*%20(Rs.100/Q)." target="_blank" class="block text-center w-full py-2 rounded-lg border border-purple-100 text-purple-600 font-bold hover:bg-purple-600 hover:text-white transition">Ask Now</a>
+                    </div>
+
+                    <div class="group bg-white rounded-2xl p-6 shadow-md border border-gray-100" data-aos="fade-up">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-full bg-yellow-50 text-yellow-600 flex items-center justify-center text-xl"><i class="fas fa-hand-paper"></i></div>
+                            <span class="text-xl font-bold text-yellow-600">₹399</span>
+                        </div>
+                        <h3 class="serif text-lg font-bold text-gray-800">Palm Analysis</h3>
+                        <p class="text-xs text-gray-500 mb-4">Detailed Hand Reading</p>
+                        <a href="https://wa.me/917905287701?text=Namaste%20Guruji%2C%20I%20am%20interested%20in%20*Palm%20Analysis*%20(Rs.399)." target="_blank" class="block text-center w-full py-2 rounded-lg border border-yellow-100 text-yellow-600 font-bold hover:bg-yellow-600 hover:text-white transition">Book Reading</a>
+                    </div>
+
+                    <div class="group bg-white rounded-2xl p-6 shadow-md border border-gray-100" data-aos="fade-up">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-full bg-green-50 text-green-600 flex items-center justify-center text-xl"><i class="fas fa-eye"></i></div>
+                            <span class="text-xl font-bold text-green-600">₹399</span>
+                        </div>
+                        <h3 class="serif text-lg font-bold text-gray-800">Face Reading</h3>
+                        <p class="text-xs text-gray-500 mb-4">Personality & Future Insights</p>
+                        <a href="https://wa.me/917905287701?text=Namaste%20Guruji%2C%20I%20am%20interested%20in%20*Face%20Reading*%20(Rs.399)." target="_blank" class="block text-center w-full py-2 rounded-lg border border-green-100 text-green-600 font-bold hover:bg-green-600 hover:text-white transition">Get Insights</a>
+                    </div>
+
+                    <div class="group bg-white rounded-2xl p-6 shadow-md border border-gray-100" data-aos="fade-up">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl"><i class="fas fa-hashtag"></i></div>
+                            <span class="text-xl font-bold text-indigo-600">₹399</span>
+                        </div>
+                        <h3 class="serif text-lg font-bold text-gray-800">Numerology Report</h3>
+                        <p class="text-xs text-gray-500 mb-4">Lucky Numbers & Name Correction</p>
+                        <a href="https://wa.me/917905287701?text=Namaste%20Guruji%2C%20I%20am%20interested%20in%20*Numerology%20Report*%20(Rs.399)." target="_blank" class="block text-center w-full py-2 rounded-lg border border-indigo-100 text-indigo-600 font-bold hover:bg-indigo-600 hover:text-white transition">Get Report</a>
                     </div>
 
                     <div class="md:col-span-2 bg-gradient-to-r from-white to-purple-50 rounded-2xl p-5 flex flex-col md:flex-row items-center justify-between shadow-md border border-purple-100 transition-all gap-4 text-center md:text-left" data-aos="fade-up">
@@ -275,7 +304,7 @@
                 </div>
 
                 <div class="xl:w-1/3" data-aos="fade-left">
-                    <div class="bg-white rounded-[2rem] p-6 md:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-orange-100 relative h-full flex flex-col">
+                    <div class="bg-white rounded-[2rem] p-6 md:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-orange-100 relative h-full flex flex-col sticky top-24">
                         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-2 bg-orange-500 rounded-b-full"></div>
                         <div class="text-center mb-8 relative">
                             <div class="w-24 h-24 md:w-28 md:h-28 mx-auto bg-gradient-to-b from-orange-100 to-white rounded-full flex items-center justify-center text-5xl text-orange-600 border-[6px] border-white shadow-xl mb-4 relative z-10">
@@ -324,18 +353,15 @@
     <section class="py-12 md:py-20 bg-white" id="about">
         <div class="container mx-auto px-4 lg:px-6">
             <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
-                
                 <div class="lg:w-7/12">
                     <div class="bg-orange-500 text-white text-xs md:text-sm font-bold px-4 py-2 inline-block mb-4">FIND HELPFUL INFORMATION</div>
                     <h2 class="serif text-3xl md:text-4xl font-bold text-orange-700 mb-4">Sriram Guruji</h2>
                     <p class="text-gray-600 mb-8 leading-relaxed text-justify text-sm md:text-base">
-                        Are you dealing with specific issues in your life and unable to find solutions? Have you tried everything to eliminate a particular problem but failed? Choosing Sriram Guruji can benefit you as he has years of expertise in providing astrology services.
+                        Are you dealing with specific issues in your life and unable to find solutions? Choosing Sriram Guruji can benefit you as he has years of expertise in providing astrology services.
                     </p>
-
                     <div class="border-2 border-red-100 rounded-xl p-5 md:p-6 shadow-sm relative">
                         <h3 class="serif text-xl md:text-2xl font-bold text-center text-red-600 mb-2">Share Your Problems</h3>
                         <p class="text-center text-gray-500 text-xs md:text-sm mb-6">Share your problems with the astrologer by filling your details.</p>
-                        
                         <form class="space-y-4">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <input type="text" placeholder="Name*" class="custom-input p-3 rounded text-sm">
@@ -346,7 +372,6 @@
                             <button class="w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white font-bold py-3 rounded-full hover:shadow-lg transition">SUBMIT NOW !</button>
                         </form>
                     </div>
-
                     <a href="https://wa.me/917905287701" class="mt-6 bg-[#25D366] rounded-lg p-4 flex items-center justify-center gap-4 text-white hover:bg-green-600 transition shadow-lg block">
                         <i class="fab fa-whatsapp text-3xl md:text-4xl"></i>
                         <div class="text-left">
@@ -358,35 +383,27 @@
 
                 <div class="lg:w-5/12 space-y-4 md:space-y-6">
                     <div class="flex gap-4 items-start p-4 border border-orange-100 rounded-lg hover:shadow-md transition bg-orange-50" data-aos="fade-left">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2904/2904842.png" class="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover border-2 border-white shadow-sm flex-shrink-0">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2904/2904842.png" class="w-12 h-12 rounded-full border-2 border-white shadow-sm flex-shrink-0">
                         <div>
                             <h3 class="serif text-lg md:text-xl font-bold text-red-700">Get Your Love Back</h3>
                             <p class="text-xs text-gray-600 mb-2">Reunite with your separated love partner.</p>
-                            <a href="#" class="bg-red-600 text-white text-[10px] px-3 py-1 rounded-full font-bold inline-block">Call Us</a>
+                            <a href="tel:+919880339009" class="bg-red-600 text-white text-[10px] px-3 py-1 rounded-full font-bold inline-block">Call Us</a>
                         </div>
                     </div>
                     <div class="flex gap-4 items-start p-4 border border-orange-100 rounded-lg hover:shadow-md transition bg-white" data-aos="fade-left" data-aos-delay="100">
-                        <img src="https://cdn-icons-png.flaticon.com/512/3662/3662817.png" class="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover border-2 border-white shadow-sm flex-shrink-0">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3662/3662817.png" class="w-12 h-12 rounded-full border-2 border-white shadow-sm flex-shrink-0">
                         <div>
                             <h3 class="serif text-lg md:text-xl font-bold text-red-700">Spiritual Healing</h3>
                             <p class="text-xs text-gray-600 mb-2">Relax from daily stress and negatives.</p>
-                            <a href="#" class="bg-red-600 text-white text-[10px] px-3 py-1 rounded-full font-bold inline-block">Call Us</a>
+                            <a href="tel:+919880339009" class="bg-red-600 text-white text-[10px] px-3 py-1 rounded-full font-bold inline-block">Call Us</a>
                         </div>
                     </div>
-                    <div class="flex gap-4 items-start p-4 border border-orange-100 rounded-lg hover:shadow-md transition bg-white" data-aos="fade-left" data-aos-delay="200">
-                        <img src="https://cdn-icons-png.flaticon.com/512/4359/4359869.png" class="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover border-2 border-white shadow-sm flex-shrink-0">
+                     <div class="flex gap-4 items-start p-4 border border-orange-100 rounded-lg hover:shadow-md transition bg-white" data-aos="fade-left" data-aos-delay="200">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4359/4359869.png" class="w-12 h-12 rounded-full border-2 border-white shadow-sm flex-shrink-0">
                         <div>
                             <h3 class="serif text-lg md:text-xl font-bold text-red-700">Psychic Reading</h3>
                             <p class="text-xs text-gray-600 mb-2">Know the future and make decisions.</p>
-                            <a href="#" class="bg-red-600 text-white text-[10px] px-3 py-1 rounded-full font-bold inline-block">Call Us</a>
-                        </div>
-                    </div>
-                     <div class="flex gap-4 items-start p-4 border border-orange-100 rounded-lg hover:shadow-md transition bg-white" data-aos="fade-left" data-aos-delay="300">
-                        <img src="https://cdn-icons-png.flaticon.com/512/5063/5063063.png" class="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover border-2 border-white shadow-sm flex-shrink-0">
-                        <div>
-                            <h3 class="serif text-lg md:text-xl font-bold text-red-700">Palm Reading</h3>
-                            <p class="text-xs text-gray-600 mb-2">Know your fate through palm reading.</p>
-                            <a href="#" class="bg-red-600 text-white text-[10px] px-3 py-1 rounded-full font-bold inline-block">Call Us</a>
+                            <a href="tel:+919880339009" class="bg-red-600 text-white text-[10px] px-3 py-1 rounded-full font-bold inline-block">Call Us</a>
                         </div>
                     </div>
                 </div>
@@ -399,20 +416,20 @@
         <div class="container mx-auto px-4 lg:px-6 relative z-10 text-center">
             <span class="bg-orange-400 text-white px-3 py-1 text-xs uppercase font-bold tracking-widest">Astrological Services By</span>
             <h2 class="serif text-3xl md:text-5xl font-bold text-orange-600 mt-2 mb-6">Sriram Guruji</h2>
-            <p class="max-w-4xl mx-auto text-gray-600 mb-12 text-sm md:text-base">Astrology is one of the fields which can help you remove obstacles in life. He can eliminate your life concerns from his multiple supernatural practices.</p>
+            <p class="max-w-4xl mx-auto text-gray-600 mb-12 text-sm md:text-base">Astrology is one of the fields which can help you remove obstacles in life.</p>
 
             <div class="flex flex-col md:flex-row justify-center gap-6 md:gap-10">
                 <div class="bg-gradient-main rounded-full p-6 md:p-8 w-full max-w-[300px] aspect-square flex flex-col justify-center items-center text-white border-8 border-white shadow-2xl mx-auto hover:scale-105 transition" data-aos="zoom-in">
                     <img src="https://cdn-icons-png.flaticon.com/512/2454/2454282.png" class="w-10 md:w-12 mb-2 invert brightness-0 filter bg-white/20 rounded-full p-2">
                     <h3 class="serif text-lg md:text-xl font-bold mb-2">Solve Financial Issues</h3>
-                    <p class="text-[10px] md:text-xs mb-4 px-2">Are you troubled by economic issues? Get monetary strength.</p>
-                    <button class="bg-transparent border border-white rounded-full px-4 py-1 text-xs font-bold hover:bg-white hover:text-orange-500 transition"><i class="fas fa-phone-alt mr-1"></i> Call Us Now</button>
+                    <p class="text-[10px] md:text-xs mb-4 px-2">Are you troubled by economic issues?</p>
+                    <a href="tel:+919880339009" class="bg-transparent border border-white rounded-full px-4 py-1 text-xs font-bold hover:bg-white hover:text-orange-500 transition"><i class="fas fa-phone-alt mr-1"></i> Call Us Now</a>
                 </div>
                 <div class="bg-gradient-main rounded-full p-6 md:p-8 w-full max-w-[300px] aspect-square flex flex-col justify-center items-center text-white border-8 border-white shadow-2xl mx-auto hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="100">
                     <img src="https://cdn-icons-png.flaticon.com/512/3209/3209965.png" class="w-10 md:w-12 mb-2 invert brightness-0 filter bg-white/20 rounded-full p-2">
                     <h3 class="serif text-lg md:text-xl font-bold mb-2">Family Problem</h3>
-                    <p class="text-[10px] md:text-xs mb-4 px-2">Improve your relationship through family problem solutions.</p>
-                    <button class="bg-transparent border border-white rounded-full px-4 py-1 text-xs font-bold hover:bg-white hover:text-orange-500 transition"><i class="fas fa-phone-alt mr-1"></i> Call Us Now</button>
+                    <p class="text-[10px] md:text-xs mb-4 px-2">Improve your relationship through family solutions.</p>
+                    <a href="tel:+919880339009" class="bg-transparent border border-white rounded-full px-4 py-1 text-xs font-bold hover:bg-white hover:text-orange-500 transition"><i class="fas fa-phone-alt mr-1"></i> Call Us Now</a>
                 </div>
             </div>
         </div>
@@ -426,71 +443,43 @@
         </div>
     </section>
 
-    <section class="py-16 md:py-20 bg-white">
-        <div class="container mx-auto px-4 lg:px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gradient-to-b from-orange-400 to-orange-600 rounded-full p-8 text-center text-white border-8 border-orange-100 shadow-xl flex flex-col justify-center items-center aspect-square max-w-[350px] mx-auto w-full" data-aos="fade-up">
-                    <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-white mb-4 bg-white">
-                        <img src="https://img.freepik.com/free-photo/young-couple-love-outdoor_144627-29337.jpg" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="serif text-xl md:text-2xl font-bold mb-2">Get Your 'Ex' Love Back</h3>
-                    <p class="text-[10px] md:text-xs mb-4">Are you facing continuous disputes with your love partner?</p>
-                    <button class="border border-white px-6 py-2 rounded-full font-bold hover:bg-white hover:text-orange-600 transition text-xs md:text-sm"><i class="fas fa-phone mr-2"></i> Call Us Now</button>
-                </div>
-                 <div class="bg-gradient-to-b from-yellow-400 to-orange-500 rounded-full p-8 text-center text-white border-8 border-orange-100 shadow-xl flex flex-col justify-center items-center aspect-square max-w-[350px] mx-auto w-full" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-white mb-4 bg-white">
-                        <img src="https://img.freepik.com/free-photo/medium-shot-woman-meditating-indoors_23-2149178652.jpg" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="serif text-xl md:text-2xl font-bold mb-2">Spiritual Healing</h3>
-                    <p class="text-[10px] md:text-xs mb-4">Workload and life tensions make an individual suffer.</p>
-                    <button class="border border-white px-6 py-2 rounded-full font-bold hover:bg-white hover:text-orange-600 transition text-xs md:text-sm"><i class="fas fa-phone mr-2"></i> Call Us Now</button>
-                </div>
-                 <div class="bg-gradient-to-b from-orange-400 to-red-500 rounded-full p-8 text-center text-white border-8 border-orange-100 shadow-xl flex flex-col justify-center items-center aspect-square max-w-[350px] mx-auto w-full" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-white mb-4 bg-white">
-                        <img src="https://img.freepik.com/free-photo/gypsy-woman-holding-crystal-ball_23-2148081792.jpg" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="serif text-xl md:text-2xl font-bold mb-2">Psychic Reading</h3>
-                    <p class="text-[10px] md:text-xs mb-4">Plan your journey and solve love, life, and career issues.</p>
-                    <button class="border border-white px-6 py-2 rounded-full font-bold hover:bg-white hover:text-orange-600 transition text-xs md:text-sm"><i class="fas fa-phone mr-2"></i> Call Us Now</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="py-12 md:py-16 bg-white">
         <div class="container mx-auto px-4 lg:px-6">
             <h2 class="serif text-3xl md:text-4xl font-bold text-center mb-10">Quick Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="rounded-xl overflow-hidden shadow-lg relative h-64 md:h-96 group">
+                <div class="rounded-xl overflow-hidden shadow-lg relative h-64 md:h-full min-h-[400px] group">
                     <img src="https://img.freepik.com/free-photo/romantic-couple-looking-each-other_23-2148028731.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-red-600 to-transparent opacity-90"></div>
                     <div class="absolute bottom-0 p-6 text-white text-center w-full">
                         <h3 class="serif text-2xl md:text-3xl font-bold mb-2 leading-tight">GET YOUR EX<br>LOVE BACK</h3>
                         <p class="text-xs md:text-sm mb-4">WITH HELP OF SRIRAM GURUJI</p>
-                        <div class="bg-white text-red-600 rounded-full py-2 px-4 font-bold text-lg md:text-xl flex items-center justify-center gap-2">
+                        <a href="tel:+919880339009" class="inline-block bg-white text-red-600 rounded-full py-2 px-4 font-bold text-lg md:text-xl items-center justify-center gap-2">
                             <i class="fas fa-phone-alt"></i> Call Now
-                        </div>
+                        </a>
                     </div>
                 </div>
 
                 <div class="flex flex-col gap-3 justify-center w-full">
-                    <button class="quick-btn py-3 shadow-md">Get Your Love Back</button>
-                    <button class="quick-btn py-3 shadow-md">Spiritual Healing</button>
-                    <button class="quick-btn py-3 shadow-md">Family Problem Solutions</button>
-                    <button class="quick-btn py-3 shadow-md">Job & Business Problems</button>
-                    <button class="quick-btn py-3 shadow-md">Psychic Reading</button>
-                    <button class="quick-btn py-3 shadow-md">Love Marriage Astrology</button>
+                    <a href="#pricing" class="quick-btn py-3 shadow-md">Whole Chart Analysis</a>
+                    <a href="#pricing" class="quick-btn py-3 shadow-md">Premium Chart Analysis</a>
+                    <a href="#pricing" class="quick-btn py-3 shadow-md">Quick Consultation</a>
+                    <a href="#pricing" class="quick-btn py-3 shadow-md">Matchmaking</a>
+                    <a href="#pricing" class="quick-btn py-3 shadow-md">Gemstones</a>
+                    <a href="#pricing" class="quick-btn py-3 shadow-md">Tarot Reading</a>
+                    <a href="#pricing" class="quick-btn py-3 shadow-md">Palm Analysis</a>
+                    <a href="#pricing" class="quick-btn py-3 shadow-md">Face Reading</a>
+                    <a href="#pricing" class="quick-btn py-3 shadow-md">Numerology Report</a>
                 </div>
 
-                <div class="rounded-xl overflow-hidden shadow-lg relative h-64 md:h-96 group">
+                <div class="rounded-xl overflow-hidden shadow-lg relative h-64 md:h-full min-h-[400px] group">
                     <img src="https://img.freepik.com/free-photo/fortune-teller-hands-holding-glass-ball_23-2149346618.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-orange-600 to-transparent opacity-90"></div>
                     <div class="absolute bottom-0 p-6 text-white text-center w-full">
                         <h3 class="serif text-2xl md:text-3xl font-bold mb-2 leading-tight">PSYCHIC<br>READING SESSION</h3>
                         <p class="text-xs md:text-sm mb-4">WITH HELP OF SRIRAM GURUJI</p>
-                        <div class="bg-white text-orange-600 rounded-full py-2 px-4 font-bold text-lg md:text-xl flex items-center justify-center gap-2">
+                        <a href="tel:+919880339009" class="inline-block bg-white text-orange-600 rounded-full py-2 px-4 font-bold text-lg md:text-xl items-center justify-center gap-2">
                             <i class="fas fa-phone-alt"></i> Call Now
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -524,37 +513,6 @@
                     <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border-4 border-orange-500 text-orange-500 flex items-center justify-center text-2xl md:text-3xl mb-4 bg-white"><i class="fas fa-shield-alt"></i></div>
                     <h4 class="serif font-bold text-red-700 text-base md:text-lg">Safe & Reliable</h4>
                     <p class="text-[10px] md:text-xs text-gray-500 mt-2 px-2">Known for safe remedies.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-12 md:py-16 bg-gray-50">
-        <div class="container mx-auto px-4 lg:px-6 flex flex-col lg:flex-row gap-8 md:gap-12 items-center">
-            <div class="lg:w-1/3 text-center lg:text-left">
-                <span class="bg-yellow-400 text-black px-4 py-2 font-bold text-sm uppercase block w-fit mx-auto lg:mx-0 mb-4">Endorsements on Work By</span>
-                <h2 class="serif text-3xl md:text-4xl font-bold text-orange-600 mb-6">Sriram Guruji</h2>
-                <p class="text-gray-600 text-sm leading-relaxed text-justify">
-                    People can comprehend the causes of their problems and discover the best remedy with the assistance of Sriram Guruji. Many people affected in many facets of their lives and disrupted their mental and physical well-being got his support.
-                </p>
-            </div>
-            
-            <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-                <div class="bg-orange-500 text-white p-6 rounded-lg text-center relative mt-10">
-                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border-4 border-white overflow-hidden mx-auto -mt-14 md:-mt-16 mb-4">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-full h-full object-cover">
-                    </div>
-                    <h4 class="serif text-lg md:text-xl font-bold">Jasica Rana</h4>
-                    <div class="text-yellow-300 text-xs mb-4">★ ★ ★ ★ ★</div>
-                    <p class="text-sm italic">"I want to thank Sriram Guruji as his love back services helped me reunite with my love. Due to his effective love spells, he helped me in attracting my love back."</p>
-                </div>
-                <div class="bg-orange-500 text-white p-6 rounded-lg text-center relative mt-10">
-                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border-4 border-white overflow-hidden mx-auto -mt-14 md:-mt-16 mb-4">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-full h-full object-cover">
-                    </div>
-                    <h4 class="serif text-lg md:text-xl font-bold">Divyansh Sharma</h4>
-                    <div class="text-yellow-300 text-xs mb-4">★ ★ ★ ★ ★</div>
-                    <p class="text-sm italic">"I was looking for healing and wanted to stay away from work. One of my friends recommended spiritual healing. His spiritual healing helped me in great self-soothing."</p>
                 </div>
             </div>
         </div>
@@ -618,13 +576,13 @@
           once: true,
         });
 
-        // Mobile Menu Toggle Script
+        // Fixed Mobile Menu Script
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('open');
-            // Optional: Toggle icon
+            // Toggle icon
             const icon = menuBtn.querySelector('i');
             if (mobileMenu.classList.contains('open')) {
                 icon.classList.remove('fa-bars');
@@ -633,6 +591,17 @@
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
             }
+        });
+
+        // Close menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                const icon = menuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
         });
     </script>
         
