@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Your Astro Dost</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-orange: #FF5500;
+            --secondary-yellow: #FFB800;
+            --royal-gold: #D4AF37;
+            --cream-bg: #FFF8F0;
+        }
+    
+        * { box-sizing: border-box; }
+        html, body { width: 100%; overflow-x: hidden; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--cream-bg); }
+        h1, h2, h3, h4, .serif { font-family: 'Playfair Display', serif; }
+        
+        .bg-gradient-main { background: linear-gradient(135deg, #FF4500 0%, #FF8C00 100%); }
+        
+        /* Glass Card for Contact Info */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 8px 32px 0 rgba(255, 85, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--royal-gold);
+            box-shadow: 0 15px 40px rgba(255, 85, 0, 0.2);
+        }
+
+        /* Gold Input Field */
+        .gold-input {
+            border: 1px solid #e5e7eb;
+            background: #fff;
+            transition: all 0.3s ease;
+        }
+        .gold-input:focus {
+            outline: none;
+            border-color: var(--royal-gold);
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+        }
+
+        /* Mobile Menu */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.open {
+            max-height: 500px;
+            opacity: 1;
+            padding-bottom: 1rem;
+        }
+        
+        /* Map Grayscale to Color on Hover */
+        .map-frame iframe {
+            filter: grayscale(100%);
+            transition: filter 0.5s;
+        }
+        .map-frame:hover iframe {
+            filter: grayscale(0%);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-[#FF4500] text-white py-2 text-[10px] md:text-xs font-medium tracking-wide hidden md:block">
+        <div class="container mx-auto px-4 lg:px-6 flex justify-between flex-wrap gap-2">
+            <span><i class="fas fa-circle text-[6px] md:text-[8px] mr-1 md:mr-2 text-yellow-300"></i> Get Your Ex Love Back</span>
+            <span><i class="fas fa-circle text-[6px] md:text-[8px] mr-1 md:mr-2 text-yellow-300"></i> Palm Reading</span>
+            <span><i class="fas fa-circle text-[6px] md:text-[8px] mr-1 md:mr-2 text-yellow-300"></i> Face Reading</span>
+            <span><i class="fas fa-circle text-[6px] md:text-[8px] mr-1 md:mr-2 text-yellow-300"></i> Tarot Reading</span>
+            <span><i class="fas fa-circle text-[6px] md:text-[8px] mr-1 md:mr-2 text-yellow-300"></i> Numerology</span>
+        </div>
+    </div>
+
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 lg:px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <i class="fas fa-sun text-3xl md:text-4xl text-orange-600 animate-spin-slow"></i>
+                <div>
+                    <h1 class="serif text-xl md:text-2xl font-bold text-orange-600 leading-none">Your Astro Dost</h1>
+                    <span class="text-[10px] md:text-xs text-gray-500 tracking-wider">GUIDING YOUR PATH</span>
+                </div>
+            </a>
+            
+            <div class="hidden lg:flex space-x-8 font-medium text-gray-700 text-sm uppercase">
+                <a href="index.html" class="hover:text-orange-600 transition">Home</a>
+                <a href="about.html" class="hover:text-orange-600 transition">About Guru Ji</a>
+                <a href="services.html" class="hover:text-orange-600 transition">Services</a>
+                <a href="contact.html" class="text-orange-600 font-bold transition">Contact</a>
+            </div>
+            
+            <a href="tel:+917905287701" class="hidden lg:block border-2 border-orange-500 text-orange-600 px-6 py-2 rounded-full font-bold hover:bg-orange-500 hover:text-white transition">
+                <i class="fas fa-phone-alt mr-2"></i> +91 79052 87701
+            </a>
+            
+            <button id="menu-btn" class="lg:hidden text-2xl text-orange-600 focus:outline-none p-2">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="lg:hidden bg-white border-t border-gray-100 shadow-lg">
+            <div class="px-4 pt-2 space-y-2">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-md">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-md">About Guru Ji</a>
+                <a href="services.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-md">Services</a>
+                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-orange-600 bg-orange-50 rounded-md">Contact</a>
+                <a href="tel:+917905287701" class="block w-full text-center mt-4 px-3 py-3 bg-orange-600 text-white rounded-md font-bold">
+                    <i class="fas fa-phone-alt mr-2"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative bg-[#1a0b00] text-white py-20 lg:py-28 overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/gold-scale.png')]"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-orange-600 rounded-full blur-[120px] opacity-40"></div>
+        <div class="absolute top-0 left-0 w-72 h-72 bg-yellow-500 rounded-full blur-[100px] opacity-20"></div>
+
+        <div class="container mx-auto px-4 lg:px-6 relative z-10 text-center">
+            <div data-aos="fade-down">
+                <span class="text-orange-400 font-bold tracking-[0.3em] uppercase text-xs md:text-sm">24/7 Available</span>
+                <h1 class="serif text-4xl lg:text-6xl font-bold mt-4 mb-6 leading-tight">
+                    Start Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-400">Divine Journey</span>
+                </h1>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
+                    Distance is not a barrier to destiny. Connect with Sriram Guruji from anywhere in the world and find the answers you seek.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative z-20 -mt-16 pb-12">
+        <div class="container mx-auto px-4 lg:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <a href="tel:+917905287701" class="glass-card p-8 rounded-2xl text-center group cursor-pointer" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-16 h-16 mx-auto bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center text-white text-2xl mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3 class="serif text-xl font-bold text-gray-800 mb-1">Call Us</h3>
+                    <p class="text-sm text-gray-500 mb-2">Available 24/7</p>
+                    <p class="text-orange-600 font-bold">+91 79052 87701</p>
+                </a>
+
+                <a href="https://wa.me/917905287701" class="glass-card p-8 rounded-2xl text-center group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 mx-auto bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center text-white text-3xl mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3 class="serif text-xl font-bold text-gray-800 mb-1">WhatsApp</h3>
+                    <p class="text-sm text-gray-500 mb-2">Instant Chat</p>
+                    <p class="text-green-600 font-bold">Chat Now</p>
+                </a>
+
+                <a href="mailto:sriramgurujiastro@gmail.com" class="glass-card p-8 rounded-2xl text-center group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 mx-auto bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white text-2xl mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="serif text-xl font-bold text-gray-800 mb-1">Email Us</h3>
+                    <p class="text-sm text-gray-500 mb-2">Get Response in 24h</p>
+                    <p class="text-blue-600 font-bold text-sm">sriramgurujiastro@gmail.com</p>
+                </a>
+
+                <div class="glass-card p-8 rounded-2xl text-center group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 mx-auto bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-white text-2xl mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="serif text-xl font-bold text-gray-800 mb-1">Visit Us</h3>
+                    <p class="text-sm text-gray-500 mb-2">Bangalore, India</p>
+                    <p class="text-orange-600 font-bold text-sm">Kasturinagar, 560043</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4 lg:px-6">
+            <div class="flex flex-col lg:flex-row gap-12 items-start">
+                
+                <div class="w-full lg:w-1/2" data-aos="fade-right">
+                    <div class="bg-white rounded-[2rem] p-8 md:p-12 shadow-2xl border border-orange-100 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-orange-400 to-red-500"></div>
+                        
+                        <h4 class="text-orange-500 font-bold uppercase tracking-widest text-xs mb-2">Confidential & Secure</h4>
+                        <h2 class="serif text-3xl md:text-4xl font-bold text-gray-800 mb-6">Send a Message</h2>
+                        <p class="text-gray-500 mb-8 text-sm leading-relaxed">
+                            Fill out the form below to schedule a call or ask a question. Guruji personally reviews all priority requests.
+                        </p>
+
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold text-gray-600 uppercase">Your Name</label>
+                                    <input type="text" placeholder="John Doe" class="gold-input w-full p-4 rounded-xl bg-gray-50">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold text-gray-600 uppercase">Phone Number</label>
+                                    <input type="tel" placeholder="+91 98765 43210" class="gold-input w-full p-4 rounded-xl bg-gray-50">
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold text-gray-600 uppercase">Select Service</label>
+                                <select class="gold-input w-full p-4 rounded-xl bg-gray-50 text-gray-700">
+                                    <option>General Inquiry</option>
+                                    <option>Love Problem Solution</option>
+                                    <option>Premium Chart Analysis</option>
+                                    <option>Business/Career</option>
+                                    <option>Marriage/Matchmaking</option>
+                                </select>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold text-gray-600 uppercase">Your Message / Birth Details</label>
+                                <textarea rows="4" placeholder="Describe your problem or enter DOB, Time, Place..." class="gold-input w-full p-4 rounded-xl bg-gray-50"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-gradient-to-r from-gray-900 to-gray-800 text-white font-bold py-4 rounded-xl hover:from-orange-600 hover:to-red-600 transition-all duration-300 shadow-lg flex justify-center items-center gap-3">
+                                <span>Send Request</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-1/2 space-y-8" data-aos="fade-left">
+                    
+                    <div class="w-full h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white map-frame relative group">
+                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.828472938634!2d77.6394!3d12.9824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16a3501a4e17%3A0x6b47c4c50257c7c3!2sKasturi%20Nagar%2C%20Bengaluru%2C%20Karnataka%2C%20India!5e0!3m2!1sen!2sus!4v1625680000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                         
+                         <div class="absolute bottom-6 left-6 bg-white px-6 py-3 rounded-full shadow-lg flex items-center gap-3 opacity-90 group-hover:opacity-100 transition">
+                            <i class="fas fa-map-pin text-red-500 text-xl"></i>
+                            <div>
+                                <p class="text-xs font-bold text-gray-400">Located At</p>
+                                <p class="text-sm font-bold text-gray-800">Kasturinagar, Bangalore</p>
+                            </div>
+                         </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-orange-50 to-yellow-50 p-8 rounded-2xl border border-orange-100 flex items-center gap-6">
+                        <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-orange-500 text-2xl shadow-sm flex-shrink-0">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div>
+                            <h3 class="serif text-lg font-bold text-gray-800">100% Private & Confidential</h3>
+                            <p class="text-sm text-gray-600">Your details and problems are kept strictly confidential. We value your privacy above all.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 lg:px-6 max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="serif text-3xl font-bold text-gray-800">Common Questions</h2>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="border border-gray-200 rounded-lg p-6 hover:border-orange-300 transition bg-gray-50">
+                    <h3 class="font-bold text-gray-800 flex items-center gap-3"><i class="fas fa-question-circle text-orange-500"></i> Is consultation available online?</h3>
+                    <p class="text-sm text-gray-600 mt-2 ml-8">Yes, Guruji provides consultation via Phone Call, WhatsApp Video Call, and Zoom for clients globally.</p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 hover:border-orange-300 transition bg-gray-50">
+                    <h3 class="font-bold text-gray-800 flex items-center gap-3"><i class="fas fa-question-circle text-orange-500"></i> What details do I need to provide?</h3>
+                    <p class="text-sm text-gray-600 mt-2 ml-8">For horoscope reading: Date of Birth, Time of Birth, and Place of Birth. For Face Reading: A clear photo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#FF5500] text-white py-4 text-center text-xs md:text-sm font-medium">
+        <div class="container mx-auto px-4 lg:px-6 flex flex-col md:flex-row justify-between items-center gap-2">
+            <p>Copyright © 2026 Sriram Guruji. All Rights Reserved.</p>
+            <div class="space-x-4">
+                <a href="#" class="hover:text-black">Privacy Policy</a>
+                <span>|</span>
+                <a href="#" class="hover:text-black">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="tel:+917905287701" class="fixed left-4 bottom-4 bg-blue-600 text-white w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center text-xl md:text-2xl shadow-lg hover:scale-110 transition z-50">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+    <a href="https://wa.me/917905287701" class="fixed right-4 bottom-4 bg-[#25D366] text-white w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center text-2xl md:text-3xl shadow-lg hover:scale-110 transition z-50">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 700, once: true });
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            const icon = menuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('open')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+</body>
+</html>
