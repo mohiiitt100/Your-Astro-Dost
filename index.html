@@ -196,7 +196,7 @@
     <section class="py-16 md:py-24 relative bg-[#FFF9F0] overflow-hidden" id="pricing">
         <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#FF8C00 1px, transparent 1px); background-size: 30px 30px;"></div>
         
-        <div class="container mx-auto px-4 lg:px-6 relative z-10">
+        <div class="container mx-auto px-4 lg:px-6 relative z-10" ">
             <div class="text-center mb-12" data-aos="fade-up">
                 <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-gradient-to-r from-orange-100 to-yellow-100 border border-orange-200 shadow-sm mb-4">
                     <i class="fas fa-gem text-orange-500 text-xs"></i>
@@ -349,7 +349,8 @@
                             </div>
 
                             <div class="relative pl-6">
-                                <div class="absolute -left-[9px] top-1 w-3.5 h-3.5 rounded-full bg-white border-4 border-green-500"></div>
+                                <div class="absolute -left-[9px] top-1 w-3.5 h-3.5 rounded-full bg-white border-4 border-red-500
+                                "></div>
                                 <h4 class="font-bold text-gray-800 text-sm" style="font-family: 'Inter', sans-serif;">Religious Pooja Services</h4>
                                 <p class="text-[10px] text-gray-500">Navgraha Jaap, Stotram, Kaal Sarp Dosha, Mangalik Dosha, Guru Chandal Dosha</p>
                             </div>
@@ -366,85 +367,129 @@
                     </div>
                 </div>
             </div>
-        </div>
+       
     </section>
 
 
 
-    <section class="py-12 md:py-16 bg-white" id="about">
-        <div class="container mx-auto px-4 lg:px-6">
-            <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">
-                
-                <div class="lg:w-7/12 flex flex-col">
-                    <div class="bg-orange-600 text-white text-[10px] md:text-xs font-bold px-4 py-1.5 inline-block mb-4 w-fit tracking-widest rounded-sm" style="font-family: 'Inter', sans-serif;">
-                        FIND HELPFUL INFORMATION
-                    </div>
-                    
-                    <h2 class="serif text-3xl md:text-4xl font-bold text-orange-700 mb-4 leading-tight">Your Astro Dost</h2>
-                    
-                    <p class="text-gray-600 mb-6 leading-relaxed text-sm md:text-base font-medium" style="font-family: 'Inter', sans-serif;">
-                        Are you dealing with specific issues in your life and unable to find solutions? Choosing Your Astro Dost can benefit you as he has years of expertise in providing astrology services.
-                    </p>
+    <style>
+        /* 1. Global Typography */
+        #about, #about p, #about span, #about input, #about textarea, #about button, #about h3, #about h4 {
+            font-family: 'Inter', sans-serif !important;
+        }
     
-                    <div class="border-2 border-red-50 rounded-2xl p-6 md:p-8 shadow-sm bg-[rgb(255,251,246)] flex-grow">
-                        <h3 class="serif text-xl md:text-2xl font-bold text-center text-red-600 mb-1">Share Your Problems</h3>
-                        <p class="text-center text-gray-400 text-[11px] md:text-xs mb-6 uppercase tracking-wider font-bold" style="font-family: 'Inter', sans-serif;">Confidential & Private</p>
+        /* 2. Realistic 3D Icon Container */
+        .realistic-icon-box {
+            width: 60px;
+            height: 60px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            position: relative;
+            /* Outer shadow for depth */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08), 
+                        inset 0 -4px 6px rgba(0,0,0,0.05),
+                        inset 0 4px 6px rgba(255,255,255,0.8);
+            border: 1px solid rgba(255,255,255,0.6);
+            transition: all 0.3s ease;
+        }
+    
+        /* 3. Icon Inner Glow/Lighting */
+        .realistic-icon-box i {
+            font-size: 26px;
+            filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.2)); /* 3D Drop shadow on the icon itself */
+        }
+    
+        .group:hover .realistic-icon-box {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(211, 47, 47, 0.15);
+        }
+    
+        @media (min-width: 1024px) {
+            .fixed-height-container {
+                height: 550px;
+                overflow: hidden;
+            }
+        }
+    </style>
+    
+    <section class="py-8 md:py-12 bg-white" id="about">
+        <div class="container mx-auto px-4 lg:px-6">
+            <div class="flex flex-col-reverse lg:flex-row gap-6 lg:gap-10 items-stretch fixed-height-container">
+                
+                <div class="lg:w-7/12 flex flex-col justify-between">
+                    <div>
+                        <div class="bg-orange-600 text-white text-[10px] font-bold px-3 py-1 inline-block mb-3 tracking-widest rounded-sm">
+                            FIND HELPFUL INFORMATION
+                        </div>
+                        <h2 class="serif text-2xl md:text-3xl font-bold text-orange-700 mb-2 leading-tight">Your Astro Dost</h2>
+                        <p class="text-gray-600 mb-4 leading-snug text-sm font-medium">
+                            Struggling with life's challenges? Your Astro Dost provides expert Vedic solutions backed by years of spiritual mastery to help you find the right path.
+                        </p>
+                    </div>
+    
+                    <div class="border border-red-100 rounded-xl p-5 shadow-sm bg-[rgb(255,251,246)] flex-grow flex flex-col justify-center">
+                        <h3 class="serif text-lg md:text-xl font-bold text-center text-red-600 mb-0.5">Share Your Problems</h3>
+                        <p class="text-center text-gray-400 text-[10px] mb-4 uppercase tracking-wider font-bold">Confidential & Private</p>
                         
-                        <form class="space-y-4">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <input type="text" placeholder="Name*" class="custom-input p-3 rounded-xl text-sm border-gray-100" style="font-family: 'Inter', sans-serif;">
-                                <input type="email" placeholder="Email*" class="custom-input p-3 rounded-xl text-sm border-gray-100" style="font-family: 'Inter', sans-serif;">
+                        <form class="space-y-3">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                <input type="text" placeholder="Name*" class="custom-input p-2.5 rounded-lg text-xs border-gray-200 w-full focus:ring-1 focus:ring-orange-500">
+                                <input type="email" placeholder="Email*" class="custom-input p-2.5 rounded-lg text-xs border-gray-200 w-full focus:ring-1 focus:ring-orange-500">
                             </div>
-                            <input type="tel" placeholder="Phone Number*" class="custom-input w-full p-3 rounded-xl text-sm border-gray-100" style="font-family: 'Inter', sans-serif;">
-                            <textarea placeholder="Tell us your problem..." rows="3" class="custom-input w-full p-3 rounded-xl text-sm border-gray-100" style="font-family: 'Inter', sans-serif;"></textarea>
+                            <input type="tel" placeholder="Phone Number*" class="custom-input w-full p-2.5 rounded-lg text-xs border-gray-200 focus:ring-1 focus:ring-orange-500">
+                            <textarea placeholder="Briefly describe your problem..." rows="2" class="custom-input w-full p-2.5 rounded-lg text-xs border-gray-200 focus:ring-1 focus:ring-orange-500"></textarea>
                             
-                            <button class="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white font-bold py-3.5 rounded-xl hover:shadow-lg transition-all transform hover:-translate-y-1 text-sm tracking-wide" style="font-family: 'Inter', sans-serif;">
+                            <button class="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white font-bold py-2.5 rounded-lg hover:shadow-md transition-all text-xs tracking-wide">
                                 SUBMIT NOW
                             </button>
                         </form>
                     </div>
     
-                    <a href="https://wa.me/917905287701" class="mt-4 bg-[#25D366] rounded-2xl p-4 flex items-center justify-center gap-4 text-white hover:bg-[#20bd5a] transition shadow-md group">
-                        <i class="fab fa-whatsapp text-3xl group-hover:scale-110 transition-transform"></i>
+                    <a href="https://wa.me/917905287701" class="mt-3 bg-[#25D366] rounded-xl p-3 flex items-center justify-center gap-3 text-white hover:bg-[#20bd5a] transition shadow-sm">
+                        <i class="fab fa-whatsapp text-2xl"></i>
                         <div class="text-left">
-                            <span class="block text-[10px] md:text-xs opacity-90 font-medium" style="font-family: 'Inter', sans-serif;">Sriram Ji Also Available on</span>
-                            <span class="block text-lg md:text-xl font-bold" style="font-family: 'Inter', sans-serif;">WhatsApp Chat</span>
+                            <span class="block text-[9px] opacity-90 font-bold uppercase">Chat with Sriram Ji</span>
+                            <span class="block text-sm font-extrabold">WhatsApp Now</span>
                         </div>
                     </a>
                 </div>
     
-                <div class="lg:w-5/12 flex flex-col justify-between gap-4">
+                <div class="lg:w-5/12 flex flex-col gap-3">
                     
-                    <div class="flex gap-4 items-center p-5 border border-orange-100 rounded-2xl hover:shadow-md transition bg-[rgb(255,251,246)] group h-full" data-aos="fade-left">
-                        <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-sm flex-shrink-0 group-hover:scale-110 transition-transform">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2904/2904842.png" class="w-8 h-8" alt="Love Back">
+                    <div class="flex gap-4 items-center p-4 border border-orange-50 rounded-xl hover:shadow-md transition bg-[rgb(255,251,246)] flex-1 group" data-aos="fade-left">
+                        <div class="realistic-icon-box">
+                            <i class="fas fa-heart-pulse text-red-600"></i>
                         </div>
-                        <div>
-                            <h3 class="serif text-lg font-bold text-red-700">Get Your Love Back</h3>
-                            <p class="text-[11px] text-gray-500 mb-2 font-medium" style="font-family: 'Inter', sans-serif;">Reunite with your separated partner.</p>
-                            <a href="tel:+917905287701" class="bg-red-600 text-white text-[10px] px-4 py-1.5 rounded-full font-bold inline-block hover:bg-red-700 transition" style="font-family: 'Inter', sans-serif;">Call Now</a>
-                        </div>
-                    </div>
-    
-                    <div class="flex gap-4 items-center p-5 border border-orange-100 rounded-2xl hover:shadow-md transition bg-[rgb(255,251,246)] group h-full" data-aos="fade-left" data-aos-delay="100">
-                        <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-sm flex-shrink-0 group-hover:scale-110 transition-transform">
-                            <img src="https://cdn-icons-png.flaticon.com/512/3662/3662817.png" class="w-8 h-8" alt="Healing">
-                        </div>
-                        <div>
-                            <h3 class="serif text-lg font-bold text-red-700">Spiritual Healing</h3>
-                            <p class="text-[11px] text-gray-500 mb-2 font-medium" style="font-family: 'Inter', sans-serif;">Relief from daily stress and negativity.</p>
-                            <a href="tel:+917905287701" class="bg-red-600 text-white text-[10px] px-4 py-1.5 rounded-full font-bold inline-block hover:bg-red-700 transition" style="font-family: 'Inter', sans-serif;">Consult Guru</a>
+                        <div class="flex flex-col">
+                            <h4 class="text-base font-bold text-red-700 leading-tight">Get Your Love Back</h4>
+                            <p class="text-[11px] text-gray-500 font-semibold mb-2">Reunite with your separated partner.</p>
+                            <a href="tel:+917905287701" class="bg-red-600 text-white text-[10px] px-4 py-1.5 rounded-full font-bold w-fit hover:bg-red-700 transition">Call Now</a>
                         </div>
                     </div>
     
-                    <div class="flex gap-4 items-center p-5 border border-orange-100 rounded-2xl hover:shadow-md transition bg-[rgb(255,251,246)] group h-full" data-aos="fade-left" data-aos-delay="200">
-                        <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-sm flex-shrink-0 group-hover:scale-110 transition-transform">
-                            <img src="https://cdn-icons-png.flaticon.com/512/4359/4359869.png" class="w-8 h-8" alt="Psychic">
+                    <div class="flex gap-4 items-center p-4 border border-orange-50 rounded-xl hover:shadow-md transition bg-[rgb(255,251,246)] flex-1 group" data-aos="fade-left" data-aos-delay="100">
+                        <div class="realistic-icon-box">
+                            <i class="fas fa-spa text-emerald-600"></i>
                         </div>
-                        <div>
-                            <h3 class="serif text-lg font-bold text-red-700">Psychic Reading</h3>
-                            <p class="text-[11px] text-gray-500 mb-2 font-medium" style="font-family: 'Inter', sans-serif;">Know your future and make decisions.</p>
-                            <a href="tel:+917905287701" class="bg-red-600 text-white text-[10px] px-4 py-1.5 rounded-full font-bold inline-block hover:bg-red-700 transition" style="font-family: 'Inter', sans-serif;">Call Now</a>
+                        <div class="flex flex-col">
+                            <h4 class="text-base font-bold text-red-700 leading-tight">Spiritual Healing</h4>
+                            <p class="text-[11px] text-gray-500 font-semibold mb-2">Relief from stress and negativity.</p>
+                            <a href="tel:+917905287701" class="bg-red-600 text-white text-[10px] px-4 py-1.5 rounded-full font-bold w-fit hover:bg-red-700 transition">Consult Guru</a>
+                        </div>
+                    </div>
+    
+                    <div class="flex gap-4 items-center p-4 border border-orange-50 rounded-xl hover:shadow-md transition bg-[rgb(255,251,246)] flex-1 group" data-aos="fade-left" data-aos-delay="200">
+                        <div class="realistic-icon-box">
+                            <i class="fas fa-eye text-indigo-600"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <h4 class="text-base font-bold text-red-700 leading-tight">Psychic Reading</h4>
+                            <p class="text-[11px] text-gray-500 font-semibold mb-2">Know your future path clearly.</p>
+                            <a href="tel:+917905287701" class="bg-red-600 text-white text-[10px] px-4 py-1.5 rounded-full font-bold w-fit hover:bg-red-700 transition">Call Now</a>
                         </div>
                     </div>
     
@@ -452,7 +497,6 @@
             </div>
         </div>
     </section>
-
 
     
     <style>
