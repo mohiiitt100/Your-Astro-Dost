@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Guru Ji | Your Astro Dost</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -21,8 +21,10 @@
     
         * { box-sizing: border-box; }
         html, body { width: 100%; overflow-x: hidden; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--cream-bg); }
-        h1, h2, h3, h4, .serif { font-family: 'Playfair Display', serif; }
+        
+        /* Updated global font to Inter Sans-Serif */
+        body { font-family: 'Inter', sans-serif; background-color: var(--cream-bg); }
+        h1, h2, h3, h4, .serif { font-family: 'Inter', sans-serif; font-weight: 700; }
         
         .bg-gradient-main { background: linear-gradient(135deg, #FF4500 0%, #FF8C00 100%); }
         
@@ -64,7 +66,7 @@
             <a href="./index.html" class="flex items-center gap-2">
                 <i class="fas fa-sun text-3xl md:text-4xl text-orange-600 animate-spin-slow"></i>
                 <div>
-                    <h1 class="serif text-xl md:text-2xl font-bold text-orange-600 leading-none">Your Astro Dost</h1>
+                    <h1 class="text-xl md:text-2xl font-bold text-orange-600 leading-none">Your Astro Dost</h1>
                     <span class="text-[10px] md:text-xs text-gray-500 tracking-wider">GUIDING YOUR PATH</span>
                 </div>
             </a>
@@ -110,7 +112,7 @@
                         Know Your Guide
                     </div>
     
-                    <h1 class="serif text-4xl lg:text-6xl font-bold leading-tight mb-4">
+                    <h1 class="text-4xl lg:text-6xl font-extrabold leading-tight mb-4">
                         About <br>
                         <span class="text-yellow-300">Your Astro Dost</span>
                     </h1>
@@ -122,11 +124,11 @@
                     <div class="flex flex-wrap gap-4 justify-center md:justify-start">
                         <div class="bg-white/10 backdrop-blur-md px-6 py-3 rounded-lg border border-white/20 text-center">
                             <span class="block text-3xl font-bold text-yellow-300">15+</span>
-                            <span class="text-xs uppercase tracking-wider">Years Exp.</span>
+                            <span class="text-xs uppercase tracking-wider font-semibold">Years Exp.</span>
                         </div>
                         <div class="bg-white/10 backdrop-blur-md px-6 py-3 rounded-lg border border-white/20 text-center">
                             <span class="block text-3xl font-bold text-yellow-300">10k+</span>
-                            <span class="text-xs uppercase tracking-wider">Happy Clients</span>
+                            <span class="text-xs uppercase tracking-wider font-semibold">Happy Clients</span>
                         </div>
                     </div>
                 </div>
@@ -152,7 +154,7 @@
 
                 <div class="lg:w-1/2" data-aos="fade-left">
                     <h4 class="text-orange-500 font-bold uppercase tracking-widest text-sm mb-2">Our Heritage</h4>
-                    <h2 class="serif text-4xl font-bold text-gray-800 mb-6">A Legacy of 4 Generations</h2>
+                    <h2 class="text-4xl font-extrabold text-gray-800 mb-6">A Legacy of 4 Generations</h2>
                     <p class="text-gray-600 leading-relaxed mb-6 text-justify">
                         Your Astro Dost is not just an astrologer by profession but by birth. Born into a Brahmin family of renowned astrologers, he inherited the divine intuition and knowledge of the Vedas from his ancestors.
                     </p>
@@ -186,7 +188,7 @@
     <section class="py-20 bg-[#FFF9F0]">
         <div class="container mx-auto px-4 lg:px-6">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="serif text-4xl font-bold text-gray-800">Mission & Vision</h2>
+                <h2 class="text-4xl font-extrabold text-gray-800">Mission & Vision</h2>
                 <div class="w-24 h-1 bg-orange-500 mx-auto mt-4 rounded-full"></div>
             </div>
 
@@ -195,7 +197,7 @@
                     <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 text-2xl mb-6">
                         <i class="fas fa-bullseye"></i>
                     </div>
-                    <h3 class="serif text-xl font-bold mb-4">Our Mission</h3>
+                    <h3 class="text-xl font-bold mb-4">Our Mission</h3>
                     <p class="text-gray-600 text-sm leading-relaxed">
                         To provide accurate, honest, and effective astrological remedies to individuals facing hardships in love, career, and health, helping them lead a prosperous life.
                     </p>
@@ -205,7 +207,7 @@
                     <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-600 text-2xl mb-6">
                         <i class="fas fa-eye"></i>
                     </div>
-                    <h3 class="serif text-xl font-bold mb-4">Our Vision</h3>
+                    <h3 class="text-xl font-bold mb-4">Our Vision</h3>
                     <p class="text-gray-600 text-sm leading-relaxed">
                         To act as a global spiritual guide, erasing the boundaries of superstition and promoting the scientific and logical approach of Vedic Astrology.
                     </p>
@@ -215,7 +217,7 @@
                     <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center text-red-600 text-2xl mb-6">
                         <i class="fas fa-hands-helping"></i>
                     </div>
-                    <h3 class="serif text-xl font-bold mb-4">Our Values</h3>
+                    <h3 class="text-xl font-bold mb-4">Our Values</h3>
                     <p class="text-gray-600 text-sm leading-relaxed">
                         100% Confidentiality, Empathy for client problems, and Integrity in predictions. We believe in "Karma" and guiding you to the right path.
                     </p>
@@ -228,8 +230,8 @@
         <div class="container mx-auto px-4 lg:px-6">
             <div class="flex flex-col md:flex-row gap-12 items-center">
                 <div class="md:w-1/2" data-aos="fade-right">
-                    <h2 class="serif text-4xl font-bold text-gray-800 mb-6">Areas of Expertise</h2>
-                    <p class="text-gray-600 mb-8">
+                    <h2 class="text-4xl font-extrabold text-gray-800 mb-6">Areas of Expertise</h2>
+                    <p class="text-gray-600 mb-8 font-medium">
                         With years of deep meditation (Sadhana) and study, Guruji has mastered various branches of occult sciences to provide 360-degree solutions.
                     </p>
                     
@@ -245,7 +247,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-bold text-gray-700">Love Vashikaran</span>
+                                <span class="font-bold text-gray-700">Vedic Pooja </span>
                                 <span class="text-orange-600 font-bold">100%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2.5">
@@ -283,8 +285,8 @@
     <section class="bg-[#D32F2F] py-16 text-center text-white relative overflow-hidden">
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
         <div class="container mx-auto px-4 relative z-10">
-            <h2 class="serif text-3xl md:text-5xl font-bold mb-6">Ready to Rewrite Your Destiny?</h2>
-            <p class="max-w-2xl mx-auto mb-10 text-red-100 text-lg">
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-6">Ready to Rewrite Your Destiny?</h2>
+            <p class="max-w-2xl mx-auto mb-10 text-red-100 text-lg font-medium">
                 Don't let problems overpower your life. Connect with Your Astro Dost today and find the path to eternal happiness.
             </p>
             <div class="flex flex-col md:flex-row gap-4 justify-center">
