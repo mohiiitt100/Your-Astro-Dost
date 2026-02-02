@@ -375,7 +375,7 @@
      
     <style>
         /* 1. Global Typography */
-        #about, #about p, #about span, #about input, #about textarea, #about button, #about h3, #about h4 {
+        #about, #about p, #about span, #about input, #about select, #about textarea, #about button, #about h3, #about h4 {
             font-family: 'Inter', sans-serif !important;
         }
     
@@ -409,12 +409,28 @@
     
         @media (min-width: 1024px) {
             .fixed-height-container {
-                height: 550px;
+                height: 600px; /* Increased slightly to accommodate new fields */
                 overflow: hidden;
             }
         }
     
-        /* 3. Error & Success Message Styles */
+        /* 3. Form Styling Extras */
+        .custom-input, .custom-select {
+            transition: all 0.2s;
+            outline: none;
+            background-color: #fff;
+        }
+        
+        .custom-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0.5rem center;
+            background-size: 1em;
+            padding-right: 2rem;
+        }
+    
+        /* 4. Error & Success Message Styles */
         .error-text {
             color: #dc2626;
             font-size: 10px;
@@ -468,25 +484,40 @@
                         <h3 class="serif text-lg md:text-xl font-bold text-center text-red-600 mb-0.5">Share Your Problems</h3>
                         <p class="text-center text-gray-400 text-[10px] mb-4 uppercase tracking-wider font-bold">Confidential & Private</p>
                         
-                        <!-- Form + Success container -->
                         <div id="formContainer">
                             <form class="space-y-3" id="contactForm">
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                    <div>
-                                        <input type="text" id="userName" placeholder="Name*" class="custom-input p-2.5 rounded-lg text-xs border-gray-200 w-full focus:ring-1 focus:ring-orange-500">
-                                    </div>
-                                    <div>
-                                        <input type="email" id="userEmail" placeholder="Email*" class="custom-input p-2.5 rounded-lg text-xs border-gray-200 w-full focus:ring-1 focus:ring-orange-500">
-                                        <p class="error-text" id="emailError">Please enter a valid email address.</p>
-                                    </div>
-                                </div>
                                 
-                                <div>
-                                    <input type="tel" id="userPhone" placeholder="Phone Number* (10 Digits)" class="custom-input w-full p-2.5 rounded-lg text-xs border-gray-200 focus:ring-1 focus:ring-orange-500">
-                                    <p class="error-text" id="phoneError">Please enter a valid 10-digit phone number.</p>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <input type="text" id="firstName" placeholder="First Name*" class="custom-input p-2.5 rounded-lg text-xs border border-gray-200 w-full focus:ring-1 focus:ring-orange-500">
+                                    </div>
+                                    <div>
+                                        <input type="text" id="lastName" placeholder="Last Name" class="custom-input p-2.5 rounded-lg text-xs border border-gray-200 w-full focus:ring-1 focus:ring-orange-500">
+                                    </div>
                                 </div>
     
-                                <textarea id="userMessage" placeholder="Briefly describe your problem..." rows="2" class="custom-input w-full p-2.5 rounded-lg text-xs border-gray-200 focus:ring-1 focus:ring-orange-500"></textarea>
+                                <div>
+                                    <input type="email" id="userEmail" placeholder="Email Address*" class="custom-input p-2.5 rounded-lg text-xs border border-gray-200 w-full focus:ring-1 focus:ring-orange-500">
+                                    <p class="error-text" id="emailError">Please enter a valid email address.</p>
+                                </div>
+    
+                                <div>
+                                    <div class="flex">
+                                        <select id="countryCode" class="custom-select p-2.5 rounded-l-lg text-xs border border-gray-200 bg-gray-50 text-gray-700 focus:ring-1 focus:ring-orange-500 border-r-0 cursor-pointer w-[110px]">
+                                            <option value="+91">IN (+91)</option>
+                                            <option value="+1">US (+1)</option>
+                                            <option value="+44">UK (+44)</option>
+                                            <option value="+1">CA (+1)</option>
+                                            <option value="+61">AU (+61)</option>
+                                            <option value="+971">AE (+971)</option>
+                                            <option value="">Other</option>
+                                        </select>
+                                        <input type="tel" id="userPhone" placeholder="Phone Number*" class="custom-input w-full p-2.5 rounded-r-lg text-xs border border-gray-200 focus:ring-1 focus:ring-orange-500">
+                                    </div>
+                                    <p class="error-text" id="phoneError">Please enter a valid phone number.</p>
+                                </div>
+    
+                                <textarea id="userMessage" placeholder="Briefly describe your problem..." rows="2" class="custom-input w-full p-2.5 rounded-lg text-xs border border-gray-200 focus:ring-1 focus:ring-orange-500"></textarea>
                                 
                                 <button type="submit" class="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white font-bold py-2.5 rounded-lg hover:shadow-md transition-all text-xs tracking-wide cursor-pointer">
                                     SUBMIT NOW
@@ -546,11 +577,15 @@
         document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault();
     
-            const nameInput    = document.getElementById('userName');
-            const emailInput   = document.getElementById('userEmail');
-            const phoneInput   = document.getElementById('userPhone');
-            const messageInput = document.getElementById('userMessage');
+            // Get Input Fields
+            const fNameInput    = document.getElementById('firstName');
+            const lNameInput    = document.getElementById('lastName');
+            const emailInput    = document.getElementById('userEmail');
+            const countryCode   = document.getElementById('countryCode');
+            const phoneInput    = document.getElementById('userPhone');
+            const messageInput  = document.getElementById('userMessage');
     
+            // Error Elements
             const emailError = document.getElementById('emailError');
             const phoneError = document.getElementById('phoneError');
     
@@ -561,6 +596,13 @@
             phoneError.style.display = 'none';
             emailInput.classList.remove('input-invalid');
             phoneInput.classList.remove('input-invalid');
+            fNameInput.classList.remove('input-invalid');
+    
+            // Name Validation
+            if (fNameInput.value.trim() === "") {
+                fNameInput.classList.add('input-invalid');
+                isValid = false;
+            }
     
             // Email validation
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -570,8 +612,8 @@
                 isValid = false;
             }
     
-            // Phone validation (exactly 10 digits)
-            const phonePattern = /^[0-9]{10}$/;
+            // Phone validation (Flexible 7-15 digits for international support)
+            const phonePattern = /^[0-9]{7,15}$/;
             if (!phonePattern.test(phoneInput.value.trim())) {
                 phoneError.style.display = 'block';
                 phoneInput.classList.add('input-invalid');
@@ -579,11 +621,17 @@
             }
     
             if (isValid) {
+                // Combine First and Last Name
+                const fullName = `${fNameInput.value.trim()} ${lNameInput.value.trim()}`;
+                
+                // Combine Country Code and Phone
+                const fullPhone = `${countryCode.value} ${phoneInput.value.trim()}`;
+    
                 // Prepare mailto content
                 const subject = "New Consultation Request from Website";
-                const body = `Name: ${nameInput.value.trim()}%0D%0A` +
+                const body = `Name: ${fullName}%0D%0A` +
                              `Email: ${emailInput.value.trim()}%0D%0A` +
-                             `Phone: ${phoneInput.value.trim()}%0D%0A` +
+                             `Phone: ${fullPhone}%0D%0A` +
                              `Message:%0D%0A${messageInput.value.trim()}`;
                 
                 const mailtoLink = `mailto:mohitmali411@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
@@ -592,7 +640,7 @@
                 const formContainer = document.getElementById('formContainer');
                 formContainer.innerHTML = `
                     <div class="success-message">
-                        <h3>Thank You!</h3>
+                        <h3>Thank You, ${fNameInput.value.trim()}!</h3>
                         <p>Your details have been received.<br>We will connect with you soon.</p>
                     </div>
                 `;
@@ -602,7 +650,6 @@
             }
         });
     </script>
-
     <!-- FIND HELPFUL INFORMATION End -->
     
     <style>
@@ -730,15 +777,15 @@
                 </div>
 
                 <div class="flex flex-col gap-3 justify-center w-full">
-                    <a href="#pricing" class="quick-btn py-3 shadow-md">Whole Chart Analysis</a>
-                    <a href="#pricing" class="quick-btn py-3 shadow-md">Premium Chart Analysis</a>
-                    <a href="#pricing" class="quick-btn py-3 shadow-md">Quick Consultation</a>
-                    <a href="#pricing" class="quick-btn py-3 shadow-md">Matchmaking</a>
-                    <a href="#pricing" class="quick-btn py-3 shadow-md">Gemstones</a>
-                    <a href="#pricing" class="quick-btn py-3 shadow-md">Tarot Reading</a>
-                    <a href="#pricing" class="quick-btn py-3 shadow-md">Palm Analysis</a>
-                    <a href="#pricing" class="quick-btn py-3 shadow-md">Face Reading</a>
-                    <a href="#pricing" class="quick-btn py-3 shadow-md">Numerology Report</a>
+                    <a href="services.html#whole-chart" class="quick-btn py-3 shadow-md">Whole Chart Analysis</a>
+                    <a href="services.html#premium-chart" class="quick-btn py-3 shadow-md">Premium Chart Analysis</a>
+                    <a href="services.html#quick-consult" class="quick-btn py-3 shadow-md">Quick Consultation</a>
+                    <a href="services.html#matchmaking" class="quick-btn py-3 shadow-md">Matchmaking</a>
+                    <a href="services.html#gemstones" class="quick-btn py-3 shadow-md">Gemstones</a>
+                    <a href="services.html#tarot" class="quick-btn py-3 shadow-md">Tarot Reading</a>
+                    <a href="services.html#palm" class="quick-btn py-3 shadow-md">Palm Analysis</a>
+                    <a href="services.html#face-reading" class="quick-btn py-3 shadow-md">Face Reading</a>
+                    <a href="services.html#numerology" class="quick-btn py-3 shadow-md">Numerology Report</a>
                 </div>
 
                 <div class="rounded-xl overflow-hidden shadow-lg relative h-64 md:h-full min-h-[400px] group">

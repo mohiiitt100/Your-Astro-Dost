@@ -45,6 +45,11 @@
             opacity: 1;
             padding-bottom: 1rem;
         }
+
+        /* Smooth Scroll Offset */
+        .service-anchor {
+            scroll-margin-top: 100px;
+        }
     </style>
 </head>
 <body>
@@ -123,6 +128,145 @@
         </div>
     </section>
 
+<!-- hero section end -->
+
+<!-- service section start -->
+
+<section class="py-24 bg-slate-50">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-20" data-aos="fade-up">
+            <span class="text-orange-500 font-semibold tracking-widest uppercase text-sm">Divine Guidance</span>
+            <h2 class="serif text-4xl md:text-5xl font-extrabold text-gray-900 mt-3 tracking-tight">Vistar Se Jaaniye <span class="text-orange-600">Hamari Services</span></h2>
+            <div class="w-24 h-1.5 bg-gradient-to-r from-orange-400 to-orange-600 mx-auto mt-6 rounded-full"></div>
+            <p class="mt-6 text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">Unlock the mysteries of your life with our expert-led astrological services, blending ancient wisdom with modern precision.</p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-10">
+            <div id="whole-chart" class="group p-8 md:p-12 rounded-[2.5rem] bg-white border border-gray-100 shadow-xl shadow-gray-200/50 flex flex-col md:flex-row gap-10 items-start hover:shadow-2xl transition-all duration-500 scroll-mt-24" data-aos="fade-up">
+                <div class="flex-shrink-0 w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center text-orange-600 group-hover:scale-110 transition-transform duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2v20"/><path d="M2 12h20"/><path d="m4.93 4.93 14.14 14.14"/><path d="m4.93 19.07 14.14-14.14"/></svg>
+                </div>
+                <div class="flex-1">
+                    <h3 class="serif text-2xl font-bold text-gray-800 mb-4 group-hover:text-orange-600 transition-colors">Whole Chart Analysis</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg mb-4">
+                        A comprehensive deep-dive into your cosmic DNA. This analysis covers your **Janma Kundali (D1), Navamsa (D9), and Dashamsha (D10)** charts. We provide a 360-degree roadmap of your life, focusing on career stability, physical vitality, and long-term marital bliss. It's the essential foundation for anyone seeking to understand their core destiny and planetary influences.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-1.5 bg-orange-50 text-orange-700 text-sm font-medium rounded-full border border-orange-100">D1, D9, D10 Analysis</span>
+                        <span class="px-4 py-1.5 bg-orange-50 text-orange-700 text-sm font-medium rounded-full border border-orange-100">Career & Health</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="premium-chart" class="group p-8 md:p-12 rounded-[2.5rem] bg-gray-900 text-white shadow-2xl flex flex-col md:flex-row gap-10 items-start hover:-translate-y-2 transition-all duration-500 scroll-mt-24 relative overflow-hidden" data-aos="fade-up">
+                <div class="absolute top-0 right-0 p-8 opacity-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                </div>
+                <div class="flex-shrink-0 w-16 h-16 bg-yellow-400/20 rounded-2xl flex items-center justify-center text-yellow-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                </div>
+                <div class="flex-1 z-10">
+                    <h3 class="serif text-2xl font-bold text-yellow-400 mb-4">Premium Chart Analysis</h3>
+                    <p class="text-gray-300 leading-relaxed text-lg mb-4">
+                        The gold standard of Vedic Astrology. This advanced **Shodashvarga** (D1 to D60) analysis provides microscopic precision into your life. We decode your **Karmic inheritance**, past-life impacts, and provide exact timing for major life breakthroughs. This is for those who seek absolute clarity and are ready for life-altering insights.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-1.5 bg-white/10 text-yellow-300 text-sm font-medium rounded-full border border-white/20">All 16 Varga Charts</span>
+                        <span class="px-4 py-1.5 bg-white/10 text-yellow-300 text-sm font-medium rounded-full border border-white/20">Karmic Analysis</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="quick-consult" class="group p-8 md:p-12 rounded-[2.5rem] bg-white border border-blue-100 shadow-xl shadow-blue-200/30 flex flex-col md:flex-row gap-10 items-start hover:shadow-2xl transition-all duration-500 scroll-mt-24" data-aos="fade-up">
+                <div class="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div class="flex-1">
+                    <h3 class="serif text-2xl font-bold text-gray-800 mb-4 group-hover:text-blue-600 transition-colors">Quick Consultation</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg mb-4">
+                        Need answers fast? This laser-focused session is perfect for immediate dilemmas. Whether it's a critical career decision or a sudden relationship question, we provide rapid, data-backed guidance based on current **Prashna Kundali and Transit (Gochar)** movements to give you a clear "Action Plan" in minutes.
+                    </p>
+                    <button class="text-blue-600 font-semibold flex items-center gap-2 hover:underline">Get Instant Answers <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+                </div>
+            </div>
+
+            <div id="matchmaking" class="group p-8 md:p-12 rounded-[2.5rem] bg-white border border-pink-100 shadow-xl shadow-pink-200/30 flex flex-col md:flex-row gap-10 items-start hover:shadow-2xl transition-all duration-500 scroll-mt-24" data-aos="fade-up">
+                <div class="flex-shrink-0 w-16 h-16 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                </div>
+                <div class="flex-1">
+                    <h3 class="serif text-2xl font-bold text-gray-800 mb-4 group-hover:text-pink-600 transition-colors">Matchmaking (Kundali Milan)</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg mb-4">
+                        We look beyond the basic 36 Gunas to ensure a marriage built on solid cosmic ground. Our method evaluates **Mental Harmony, Longevity, and Financial Stability** of the couple. We provide authentic remedies for Mangal and Nadi Dosha, ensuring your union is not just socially aligned, but spiritually compatible for a joyful life.
+                    </p>
+                </div>
+            </div>
+
+            <div id="gemstones" class="group p-8 md:p-12 rounded-[2.5rem] bg-white border border-emerald-100 shadow-xl shadow-emerald-200/30 flex flex-col md:flex-row gap-10 items-start hover:shadow-2xl transition-all duration-500 scroll-mt-24" data-aos="fade-up">
+                <div class="flex-shrink-0 w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                </div>
+                <div class="flex-1">
+                    <h3 class="serif text-2xl font-bold text-gray-800 mb-4 group-hover:text-emerald-600 transition-colors">Gemstones Recommendation</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg mb-4">
+                        Harness the vibrational energy of the universe. We recommend gemstones based on the strength of your "Yogakaraka" planets. Our consultation includes advice on the **correct carat weight, metal, and the most auspicious 'Muhurata'** to wear your gemstone to unlock luck, health, and prosperity.
+                    </p>
+                </div>
+            </div>
+
+            <div id="tarot" class="group p-8 md:p-12 rounded-[2.5rem] bg-white border border-purple-100 shadow-xl shadow-purple-200/30 flex flex-col md:flex-row gap-10 items-start hover:shadow-2xl transition-all duration-500 scroll-mt-24" data-aos="fade-up">
+                <div class="flex-shrink-0 w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2"/><line x1="9" x2="15" y1="10" y2="10"/><line x1="9" x2="15" y1="14" y2="14"/></svg>
+                </div>
+                <div class="flex-1">
+                    <h3 class="serif text-2xl font-bold text-gray-800 mb-4 group-hover:text-purple-600 transition-colors">Tarot Reading</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg mb-4">
+                        Intuitive insights for the modern soul. Tarot acts as a spiritual bridge, reflecting your current subconscious energies. Our readings help you clear mental fog, understand the intentions of others, and find a sense of direction when you feel at a spiritual or emotional crossroad.
+                    </p>
+                </div>
+            </div>
+
+            <div id="palm" class="group p-8 md:p-12 rounded-[2.5rem] bg-white border border-yellow-100 shadow-xl shadow-yellow-200/30 flex flex-col md:flex-row gap-10 items-start hover:shadow-2xl transition-all duration-500 scroll-mt-24" data-aos="fade-up">
+                <div class="flex-shrink-0 w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center text-yellow-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/><path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/><path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>
+                </div>
+                <div class="flex-1">
+                    <h3 class="serif text-2xl font-bold text-gray-800 mb-4 group-hover:text-yellow-700 transition-colors">Palm Analysis (Chiromancy)</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg mb-4">
+                        Your hands tell a story that your birth time might forget. We analyze the intricate lines and mounts of your palm to reveal your life path, health warnings, and future potential. This ancient science offers a powerful secondary confirmation of your astrological chart and provides guidance for those with missing birth details.
+                    </p>
+                </div>
+            </div>
+
+            <div id="face-reading" class="group p-8 md:p-12 rounded-[2.5rem] bg-white border border-indigo-100 shadow-xl shadow-indigo-200/30 flex flex-col md:flex-row gap-10 items-start hover:shadow-2xl transition-all duration-500 scroll-mt-24" data-aos="fade-up">
+                <div class="flex-shrink-0 w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M9 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/><path d="M15 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/><path d="M8 15s1.5 2 4 2 4-2 4-2"/></svg>
+                </div>
+                <div class="flex-1">
+                    <h3 class="serif text-2xl font-bold text-gray-800 mb-4 group-hover:text-indigo-600 transition-colors">Face Reading</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg mb-4">
+                        Decode personality and destiny through facial morphology. Our face reading service helps you understand the innate nature of business partners or life partners. By analyzing facial features, we can predict wealth patterns and future luck, helping you navigate human relationships with superior awareness.
+                    </p>
+                </div>
+            </div>
+
+            <div id="numerology" class="group p-8 md:p-12 rounded-[2.5rem] bg-white border border-orange-100 shadow-xl shadow-orange-200/30 flex flex-col md:flex-row gap-10 items-start hover:shadow-2xl transition-all duration-500 scroll-mt-24" data-aos="fade-up">
+                <div class="flex-shrink-0 w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center text-orange-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"/><polyline points="14 2 14 8 20 8"/><path d="M2 15h10"/><path d="m9 18 3-3-3-3"/></svg>
+                </div>
+                <div class="flex-1">
+                    <h3 class="serif text-2xl font-bold text-gray-800 mb-4 group-hover:text-orange-600 transition-colors">Numerology Report</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg mb-4">
+                        Optimize your life's frequency. We provide deep analysis of your birth number and name vibrations. Our report includes **Name Spelling Optimization**, lucky dates, and business name suggestions to ensure you are always in sync with the numbers that bring abundance and success.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- service section start -->
+
     <section id="all-services" class="py-20 bg-[#FFF9F0]">
         <div class="container mx-auto px-4 lg:px-6">
             <div class="text-center mb-16" data-aos="fade-up">
@@ -132,7 +276,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <div class="bg-white rounded-2xl p-6 shadow-lg border border-orange-100 hover:shadow-2xl hover:border-orange-300 transition-all duration-300 group" data-aos="fade-up">
+                <div class="bg-white rounded-2xl p-6 shadow-lg border border-orange-100 hover:shadow-2xl hover:border-orange-300 transition-all duration-300 group" data-aos="fade-up" id="s1">
                     <div class="flex justify-between items-start mb-4">
                         <div class="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 text-2xl group-hover:bg-orange-600 group-hover:text-white transition">
                             <i class="fas fa-globe"></i>
@@ -149,6 +293,8 @@
                     </ul>
                     <a href="https://wa.me/917905287701?text=I%20want%20Whole%20Chart%20Analysis" class="block text-center w-full py-3 rounded-xl border border-orange-200 text-orange-600 font-bold hover:bg-orange-600 hover:text-white transition">Book Now</a>
                 </div>
+
+
 
                 <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 shadow-2xl border border-yellow-500/30 transform lg:-translate-y-4 relative overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
                     <div class="absolute top-0 right-0 bg-yellow-400 text-black text-[10px] font-bold px-3 py-1 rounded-bl-lg uppercase">Recommended</div>
