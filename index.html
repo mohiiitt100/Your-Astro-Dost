@@ -371,7 +371,8 @@
     </section>
 
 
-
+    <!-- FIND HELPFUL INFORMATION Start -->
+     
     <style>
         /* 1. Global Typography */
         #about, #about p, #about span, #about input, #about textarea, #about button, #about h3, #about h4 {
@@ -389,7 +390,6 @@
             justify-content: center;
             flex-shrink: 0;
             position: relative;
-            /* Outer shadow for depth */
             box-shadow: 0 10px 20px rgba(0,0,0,0.08), 
                         inset 0 -4px 6px rgba(0,0,0,0.05),
                         inset 0 4px 6px rgba(255,255,255,0.8);
@@ -397,10 +397,9 @@
             transition: all 0.3s ease;
         }
     
-        /* 3. Icon Inner Glow/Lighting */
         .realistic-icon-box i {
             font-size: 26px;
-            filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.2)); /* 3D Drop shadow on the icon itself */
+            filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.2));
         }
     
         .group:hover .realistic-icon-box {
@@ -413,6 +412,40 @@
                 height: 550px;
                 overflow: hidden;
             }
+        }
+    
+        /* 3. Error & Success Message Styles */
+        .error-text {
+            color: #dc2626;
+            font-size: 10px;
+            font-weight: 600;
+            margin-top: 2px;
+            display: none;
+        }
+        
+        .input-invalid {
+            border-color: #dc2626 !important;
+            background-color: #fef2f2 !important;
+        }
+    
+        .success-message {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: #166534;
+            background: #dcfce7;
+            border: 1px solid #86efac;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+    
+        .success-message h3 {
+            color: #15803d;
+            margin-bottom: 0.5rem;
+        }
+    
+        .success-message p {
+            margin: 0;
+            font-size: 0.95rem;
         }
     </style>
     
@@ -435,18 +468,31 @@
                         <h3 class="serif text-lg md:text-xl font-bold text-center text-red-600 mb-0.5">Share Your Problems</h3>
                         <p class="text-center text-gray-400 text-[10px] mb-4 uppercase tracking-wider font-bold">Confidential & Private</p>
                         
-                        <form class="space-y-3">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                <input type="text" placeholder="Name*" class="custom-input p-2.5 rounded-lg text-xs border-gray-200 w-full focus:ring-1 focus:ring-orange-500">
-                                <input type="email" placeholder="Email*" class="custom-input p-2.5 rounded-lg text-xs border-gray-200 w-full focus:ring-1 focus:ring-orange-500">
-                            </div>
-                            <input type="tel" placeholder="Phone Number*" class="custom-input w-full p-2.5 rounded-lg text-xs border-gray-200 focus:ring-1 focus:ring-orange-500">
-                            <textarea placeholder="Briefly describe your problem..." rows="2" class="custom-input w-full p-2.5 rounded-lg text-xs border-gray-200 focus:ring-1 focus:ring-orange-500"></textarea>
-                            
-                            <button class="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white font-bold py-2.5 rounded-lg hover:shadow-md transition-all text-xs tracking-wide">
-                                SUBMIT NOW
-                            </button>
-                        </form>
+                        <!-- Form + Success container -->
+                        <div id="formContainer">
+                            <form class="space-y-3" id="contactForm">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <div>
+                                        <input type="text" id="userName" placeholder="Name*" class="custom-input p-2.5 rounded-lg text-xs border-gray-200 w-full focus:ring-1 focus:ring-orange-500">
+                                    </div>
+                                    <div>
+                                        <input type="email" id="userEmail" placeholder="Email*" class="custom-input p-2.5 rounded-lg text-xs border-gray-200 w-full focus:ring-1 focus:ring-orange-500">
+                                        <p class="error-text" id="emailError">Please enter a valid email address.</p>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <input type="tel" id="userPhone" placeholder="Phone Number* (10 Digits)" class="custom-input w-full p-2.5 rounded-lg text-xs border-gray-200 focus:ring-1 focus:ring-orange-500">
+                                    <p class="error-text" id="phoneError">Please enter a valid 10-digit phone number.</p>
+                                </div>
+    
+                                <textarea id="userMessage" placeholder="Briefly describe your problem..." rows="2" class="custom-input w-full p-2.5 rounded-lg text-xs border-gray-200 focus:ring-1 focus:ring-orange-500"></textarea>
+                                
+                                <button type="submit" class="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white font-bold py-2.5 rounded-lg hover:shadow-md transition-all text-xs tracking-wide cursor-pointer">
+                                    SUBMIT NOW
+                                </button>
+                            </form>
+                        </div>
                     </div>
     
                     <a href="https://wa.me/917905287701" class="mt-3 bg-[#25D366] rounded-xl p-3 flex items-center justify-center gap-3 text-white hover:bg-[#20bd5a] transition shadow-sm">
@@ -459,7 +505,6 @@
                 </div>
     
                 <div class="lg:w-5/12 flex flex-col gap-3">
-                    
                     <div class="flex gap-4 items-center p-4 border border-orange-50 rounded-xl hover:shadow-md transition bg-[rgb(255,251,246)] flex-1 group" data-aos="fade-left">
                         <div class="realistic-icon-box">
                             <i class="fas fa-heart-pulse text-red-600"></i>
@@ -492,12 +537,73 @@
                             <a href="tel:+917905287701" class="bg-red-600 text-white text-[10px] px-4 py-1.5 rounded-full font-bold w-fit hover:bg-red-700 transition">Call Now</a>
                         </div>
                     </div>
-    
                 </div>
             </div>
         </div>
     </section>
+    
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            const nameInput    = document.getElementById('userName');
+            const emailInput   = document.getElementById('userEmail');
+            const phoneInput   = document.getElementById('userPhone');
+            const messageInput = document.getElementById('userMessage');
+    
+            const emailError = document.getElementById('emailError');
+            const phoneError = document.getElementById('phoneError');
+    
+            let isValid = true;
+    
+            // Reset previous errors
+            emailError.style.display = 'none';
+            phoneError.style.display = 'none';
+            emailInput.classList.remove('input-invalid');
+            phoneInput.classList.remove('input-invalid');
+    
+            // Email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(emailInput.value.trim())) {
+                emailError.style.display = 'block';
+                emailInput.classList.add('input-invalid');
+                isValid = false;
+            }
+    
+            // Phone validation (exactly 10 digits)
+            const phonePattern = /^[0-9]{10}$/;
+            if (!phonePattern.test(phoneInput.value.trim())) {
+                phoneError.style.display = 'block';
+                phoneInput.classList.add('input-invalid');
+                isValid = false;
+            }
+    
+            if (isValid) {
+                // Prepare mailto content
+                const subject = "New Consultation Request from Website";
+                const body = `Name: ${nameInput.value.trim()}%0D%0A` +
+                             `Email: ${emailInput.value.trim()}%0D%0A` +
+                             `Phone: ${phoneInput.value.trim()}%0D%0A` +
+                             `Message:%0D%0A${messageInput.value.trim()}`;
+                
+                const mailtoLink = `mailto:mohitmali411@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    
+                // Show thank you message
+                const formContainer = document.getElementById('formContainer');
+                formContainer.innerHTML = `
+                    <div class="success-message">
+                        <h3>Thank You!</h3>
+                        <p>Your details have been received.<br>We will connect with you soon.</p>
+                    </div>
+                `;
+    
+                // Open email client (user sends the email manually)
+                window.location.href = mailtoLink;
+            }
+        });
+    </script>
 
+    <!-- FIND HELPFUL INFORMATION End -->
     
     <style>
         /* Ultra-Visible Rotating Gradient Border */
