@@ -372,284 +372,389 @@
 
 
     <!-- FIND HELPFUL INFORMATION Start -->
-     
-    <style>
-        /* 1. Global Typography */
-        #about, #about p, #about span, #about input, #about select, #about textarea, #about button, #about h3, #about h4 {
-            font-family: 'Inter', sans-serif !important;
-        }
-    
-        /* 2. Realistic 3D Icon Container */
-        .realistic-icon-box {
-            width: 60px;
-            height: 60px;
-            background: #ffffff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            position: relative;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08), 
-                        inset 0 -4px 6px rgba(0,0,0,0.05),
-                        inset 0 4px 6px rgba(255,255,255,0.8);
-            border: 1px solid rgba(255,255,255,0.6);
-            transition: all 0.3s ease;
-        }
-    
-        .realistic-icon-box i {
-            font-size: 26px;
-            filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.2));
-        }
-    
-        .group:hover .realistic-icon-box {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 30px rgba(211, 47, 47, 0.15);
-        }
-    
-        @media (min-width: 1024px) {
-            .fixed-height-container {
-                height: 600px; /* Increased slightly to accommodate new fields */
-                overflow: hidden;
+
+        <style>
+            /* 1. Global Typography */
+            #about, #about p, #about span, #about input, #about select, #about textarea, #about button, #about h3, #about h4 {
+                font-family: 'Inter', sans-serif !important;
             }
-        }
-    
-        /* 3. Form Styling Extras */
-        .custom-input, .custom-select {
-            transition: all 0.2s;
-            outline: none;
-            background-color: #fff;
-        }
         
-        .custom-select {
-            appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 0.5rem center;
-            background-size: 1em;
-            padding-right: 2rem;
-        }
-    
-        /* 4. Error & Success Message Styles */
-        .error-text {
-            color: #dc2626;
-            font-size: 10px;
-            font-weight: 600;
-            margin-top: 2px;
-            display: none;
-        }
+            /* 2. Realistic 3D Icon Container */
+            .realistic-icon-box {
+                width: 60px;
+                height: 60px;
+                background: #ffffff;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                position: relative;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.08), 
+                            inset 0 -4px 6px rgba(0,0,0,0.05),
+                            inset 0 4px 6px rgba(255,255,255,0.8);
+                border: 1px solid rgba(255,255,255,0.6);
+                transition: all 0.3s ease;
+            }
         
-        .input-invalid {
-            border-color: #dc2626 !important;
-            background-color: #fef2f2 !important;
-        }
+            .realistic-icon-box i {
+                font-size: 26px;
+                filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.2));
+            }
+        
+            .group:hover .realistic-icon-box {
+                transform: translateY(-5px) scale(1.05);
+                box-shadow: 0 15px 30px rgba(211, 47, 47, 0.15);
+            }
+        
+            @media (min-width: 1024px) {
+                .fixed-height-container {
+                    height: 600px;
+                    overflow: hidden;
+                }
+            }
+        
+            /* 3. Form Styling Extras */
+            .custom-input {
+                transition: all 0.2s;
+                outline: none;
+                background-color: #fff;
+            }
+            
+            /* 4. Custom Dropdown Styles */
+            .custom-dropdown-list {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                z-index: 50;
+                width: 150px;
+                max-height: 200px;
+                overflow-y: auto;
+                background: white;
+                border: 1px solid #e5e7eb;
+                border-radius: 0 0 8px 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            }
     
-        .success-message {
-            text-align: center;
-            padding: 2rem 1rem;
-            color: #166534;
-            background: #dcfce7;
-            border: 1px solid #86efac;
-            border-radius: 12px;
-            font-weight: 600;
-        }
+            .custom-dropdown-list.active {
+                display: block;
+            }
     
-        .success-message h3 {
-            color: #15803d;
-            margin-bottom: 0.5rem;
-        }
+            .dropdown-item {
+                padding: 8px 12px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 11px;
+                transition: background 0.2s;
+            }
     
-        .success-message p {
-            margin: 0;
-            font-size: 0.95rem;
-        }
-    </style>
+            .dropdown-item:hover {
+                background-color: #fff7ed;
+            }
     
-    <section class="py-8 md:py-12 bg-white" id="about">
-        <div class="container mx-auto px-4 lg:px-6">
-            <div class="flex flex-col-reverse lg:flex-row gap-6 lg:gap-10 items-stretch fixed-height-container">
-                
-                <div class="lg:w-7/12 flex flex-col justify-between">
-                    <div>
-                        <div class="bg-orange-600 text-white text-[10px] font-bold px-3 py-1 inline-block mb-3 tracking-widest rounded-sm">
-                            FIND HELPFUL INFORMATION
+            /* 5. Error & Success Message Styles */
+            .error-text {
+                color: #dc2626;
+                font-size: 10px;
+                font-weight: 600;
+                margin-top: 2px;
+                display: none;
+            }
+            
+            .input-invalid {
+                border-color: #dc2626 !important;
+                background-color: #fef2f2 !important;
+            }
+        
+            .success-message {
+                text-align: center;
+                padding: 2rem 1rem;
+                color: #166534;
+                background: #dcfce7;
+                border: 1px solid #86efac;
+                border-radius: 12px;
+                font-weight: 600;
+            }
+        
+            .success-message h3 {
+                color: #15803d;
+                margin-bottom: 0.5rem;
+            }
+        
+            .success-message p {
+                margin: 0;
+                font-size: 0.95rem;
+            }
+    
+            /* Scrollbar styling for dropdown */
+            .custom-dropdown-list::-webkit-scrollbar {
+                width: 4px;
+            }
+            .custom-dropdown-list::-webkit-scrollbar-track {
+                background: #f1f1f1;
+            }
+            .custom-dropdown-list::-webkit-scrollbar-thumb {
+                background: #f97316;
+                border-radius: 10px;
+            }
+        </style>
+    
+    
+        <section class="py-8 md:py-12 bg-white" id="about">
+            <div class="container mx-auto px-4 lg:px-6">
+                <div class="flex flex-col-reverse lg:flex-row gap-6 lg:gap-10 items-stretch fixed-height-container">
+                    
+                    <!-- Left Side: Form and Header -->
+                    <div class="lg:w-7/12 flex flex-col justify-between">
+                        <div>
+                            <div class="bg-orange-600 text-white text-[10px] font-bold px-3 py-1 inline-block mb-3 tracking-widest rounded-sm">
+                                FIND HELPFUL INFORMATION
+                            </div>
+                            <h2 class="serif text-2xl md:text-3xl font-bold text-orange-700 mb-2 leading-tight">Your Astro Dost</h2>
+                            <p class="text-gray-600 mb-4 leading-snug text-sm font-medium">
+                                Struggling with life's challenges? Your Astro Dost provides expert Vedic solutions backed by years of spiritual mastery to help you find the right path.
+                            </p>
                         </div>
-                        <h2 class="serif text-2xl md:text-3xl font-bold text-orange-700 mb-2 leading-tight">Your Astro Dost</h2>
-                        <p class="text-gray-600 mb-4 leading-snug text-sm font-medium">
-                            Struggling with life's challenges? Your Astro Dost provides expert Vedic solutions backed by years of spiritual mastery to help you find the right path.
-                        </p>
-                    </div>
-    
-                    <div class="border border-red-100 rounded-xl p-5 shadow-sm bg-[rgb(255,251,246)] flex-grow flex flex-col justify-center">
-                        <h3 class="serif text-lg md:text-xl font-bold text-center text-red-600 mb-0.5">Share Your Problems</h3>
-                        <p class="text-center text-gray-400 text-[10px] mb-4 uppercase tracking-wider font-bold">Confidential & Private</p>
-                        
-                        <div id="formContainer">
-                            <form class="space-y-3" id="contactForm">
-                                
-                                <div class="grid grid-cols-2 gap-3">
+        
+                        <div class="border border-red-100 rounded-xl p-5 shadow-sm bg-[rgb(255,251,246)] flex-grow flex flex-col justify-center">
+                            <h3 class="serif text-lg md:text-xl font-bold text-center text-red-600 mb-0.5">Share Your Problems</h3>
+                            <p class="text-center text-gray-400 text-[10px] mb-4 uppercase tracking-wider font-bold">Confidential & Private</p>
+                            
+                            <div id="formContainer">
+                                <form class="space-y-3" id="contactForm">
+                                    
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <div>
+                                            <input type="text" id="firstName" placeholder="First Name*" class="custom-input p-2.5 rounded-lg text-xs border border-gray-200 w-full focus:ring-1 focus:ring-orange-500">
+                                        </div>
+                                        <div>
+                                            <input type="text" id="lastName" placeholder="Last Name" class="custom-input p-2.5 rounded-lg text-xs border border-gray-200 w-full focus:ring-1 focus:ring-orange-500">
+                                        </div>
+                                    </div>
+        
                                     <div>
-                                        <input type="text" id="firstName" placeholder="First Name*" class="custom-input p-2.5 rounded-lg text-xs border border-gray-200 w-full focus:ring-1 focus:ring-orange-500">
+                                        <input type="email" id="userEmail" placeholder="Email Address*" class="custom-input p-2.5 rounded-lg text-xs border border-gray-200 w-full focus:ring-1 focus:ring-orange-500">
+                                        <p class="error-text" id="emailError">Please enter a valid email address.</p>
                                     </div>
+        
                                     <div>
-                                        <input type="text" id="lastName" placeholder="Last Name" class="custom-input p-2.5 rounded-lg text-xs border border-gray-200 w-full focus:ring-1 focus:ring-orange-500">
+                                        <div class="flex relative">
+                                            <!-- Custom Dropdown Container -->
+                                            <div class="relative w-[101px]" id="dropdownWrapper">
+                                                <div id="selectedCountry" class="flex items-center gap-2 p-2.5 rounded-l-lg text-xs border border-gray-200 bg-gray-50 text-gray-700 focus:ring-1 focus:ring-orange-500 border-r-0 cursor-pointer h-full">
+                                                    <img id="currentFlag" src="https://flagcdn.com/w20/in.png" alt="IN" class="w-5 h-auto rounded-sm">
+                                                    <span id="currentCode">+91</span>
+                                                    <i class="fas fa-chevron-down ml-auto text-[10px] opacity-50"></i>
+                                                </div>
+                                                <!-- List of countries -->
+                                                <div id="dropdownList" class="custom-dropdown-list">
+                                                    <div class="dropdown-item" data-code="+91" data-flag="in">
+                                                        <img src="https://flagcdn.com/w20/in.png" class="w-5" alt=""> IN (+91)
+                                                    </div>
+                                                    <div class="dropdown-item" data-code="+1" data-flag="us">
+                                                        <img src="https://flagcdn.com/w20/us.png" class="w-5" alt=""> US (+1)
+                                                    </div>
+                                                    <div class="dropdown-item" data-code="+44" data-flag="gb">
+                                                        <img src="https://flagcdn.com/w20/gb.png" class="w-5" alt=""> UK (+44)
+                                                    </div>
+                                                    <div class="dropdown-item" data-code="+1" data-flag="ca">
+                                                        <img src="https://flagcdn.com/w20/ca.png" class="w-5" alt=""> CA (+1)
+                                                    </div>
+                                                    <div class="dropdown-item" data-code="+61" data-flag="au">
+                                                        <img src="https://flagcdn.com/w20/au.png" class="w-5" alt=""> AU (+61)
+                                                    </div>
+                                                    <div class="dropdown-item" data-code="+971" data-flag="ae">
+                                                        <img src="https://flagcdn.com/w20/ae.png" class="w-5" alt=""> AE (+971)
+                                                    </div>
+                                                    <div class="dropdown-item" data-code="+65" data-flag="sg">
+                                                        <img src="https://flagcdn.com/w20/sg.png" class="w-5" alt=""> SG (+65)
+                                                    </div>
+                                                    <div class="dropdown-item" data-code="+49" data-flag="de">
+                                                        <img src="https://flagcdn.com/w20/de.png" class="w-5" alt=""> DE (+49)
+                                                    </div>
+                                                    <div class="dropdown-item" data-code="" data-flag="un">
+                                                        <i class="fas fa-globe text-gray-400"></i> Other
+                                                    </div>
+                                                </div>
+                                                <!-- Hidden input to store the actual value -->
+                                                <input type="hidden" id="countryCode" value="+91">
+                                            </div>
+    
+                                            <input type="tel" id="userPhone" placeholder="Phone Number*" class="custom-input w-full p-2.5 rounded-r-lg text-xs border border-gray-200 focus:ring-1 focus:ring-orange-500">
+                                        </div>
+                                        <p class="error-text" id="phoneError">Please enter a valid phone number.</p>
                                     </div>
-                                </div>
-    
-                                <div>
-                                    <input type="email" id="userEmail" placeholder="Email Address*" class="custom-input p-2.5 rounded-lg text-xs border border-gray-200 w-full focus:ring-1 focus:ring-orange-500">
-                                    <p class="error-text" id="emailError">Please enter a valid email address.</p>
-                                </div>
-    
-                                <div>
-                                    <div class="flex">
-                                        <select id="countryCode" class="custom-select p-2.5 rounded-l-lg text-xs border border-gray-200 bg-gray-50 text-gray-700 focus:ring-1 focus:ring-orange-500 border-r-0 cursor-pointer w-[110px]">
-                                            <option value="+91">IN (+91)</option>
-                                            <option value="+1">US (+1)</option>
-                                            <option value="+44">UK (+44)</option>
-                                            <option value="+1">CA (+1)</option>
-                                            <option value="+61">AU (+61)</option>
-                                            <option value="+971">AE (+971)</option>
-                                            <option value="">Other</option>
-                                        </select>
-                                        <input type="tel" id="userPhone" placeholder="Phone Number*" class="custom-input w-full p-2.5 rounded-r-lg text-xs border border-gray-200 focus:ring-1 focus:ring-orange-500">
-                                    </div>
-                                    <p class="error-text" id="phoneError">Please enter a valid phone number.</p>
-                                </div>
-    
-                                <textarea id="userMessage" placeholder="Briefly describe your problem..." rows="2" class="custom-input w-full p-2.5 rounded-lg text-xs border border-gray-200 focus:ring-1 focus:ring-orange-500"></textarea>
-                                
-                                <button type="submit" class="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white font-bold py-2.5 rounded-lg hover:shadow-md transition-all text-xs tracking-wide cursor-pointer">
-                                    SUBMIT NOW
-                                </button>
-                            </form>
+        
+                                    <textarea id="userMessage" placeholder="Briefly describe your problem..." rows="2" class="custom-input w-full p-2.5 rounded-lg text-xs border border-gray-200 focus:ring-1 focus:ring-orange-500"></textarea>
+                                    
+                                    <button type="submit" class="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white font-bold py-2.5 rounded-lg hover:shadow-md transition-all text-xs tracking-wide cursor-pointer">
+                                        SUBMIT NOW
+                                    </button>
+                                </form>
+                            </div>
                         </div>
+        
+                        <a href="https://wa.me/917905287701" class="mt-3 bg-[#25D366] rounded-xl p-3 flex items-center justify-center gap-3 text-white hover:bg-[#20bd5a] transition shadow-sm">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                            <div class="text-left">
+                                <span class="block text-[9px] opacity-90 font-bold uppercase">Chat with Your Astro Dost </span>
+                                <span class="block text-sm font-extrabold">WhatsApp Now</span>
+                            </div>
+                        </a>
                     </div>
-    
-                    <a href="https://wa.me/917905287701" class="mt-3 bg-[#25D366] rounded-xl p-3 flex items-center justify-center gap-3 text-white hover:bg-[#20bd5a] transition shadow-sm">
-                        <i class="fab fa-whatsapp text-2xl"></i>
-                        <div class="text-left">
-                            <span class="block text-[9px] opacity-90 font-bold uppercase">Chat with Your Astro Dost </span>
-                            <span class="block text-sm font-extrabold">WhatsApp Now</span>
+        
+                    <!-- Right Side: Services -->
+                    <div class="lg:w-5/12 flex flex-col gap-3">
+                        <div class="flex gap-4 items-center p-4 border border-orange-50 rounded-xl hover:shadow-md transition bg-[rgb(255,251,246)] flex-1 group">
+                            <div class="realistic-icon-box">
+                                <i class="fas fa-heart-pulse text-red-600"></i>
+                            </div>
+                            <div class="flex flex-col">
+                                <h4 class="text-base font-bold text-red-700 leading-tight">Get Your Love Back</h4>
+                                <p class="text-[11px] text-gray-500 font-semibold mb-2">Reunite with your separated partner.</p>
+                                <a href="tel:+917905287701" class="bg-red-600 text-white text-[10px] px-4 py-1.5 rounded-full font-bold w-fit hover:bg-red-700 transition">Call Now</a>
+                            </div>
                         </div>
-                    </a>
-                </div>
-    
-                <div class="lg:w-5/12 flex flex-col gap-3">
-                    <div class="flex gap-4 items-center p-4 border border-orange-50 rounded-xl hover:shadow-md transition bg-[rgb(255,251,246)] flex-1 group" data-aos="fade-left">
-                        <div class="realistic-icon-box">
-                            <i class="fas fa-heart-pulse text-red-600"></i>
+        
+                        <div class="flex gap-4 items-center p-4 border border-orange-50 rounded-xl hover:shadow-md transition bg-[rgb(255,251,246)] flex-1 group">
+                            <div class="realistic-icon-box">
+                                <i class="fas fa-spa text-emerald-600"></i>
+                            </div>
+                            <div class="flex flex-col">
+                                <h4 class="text-base font-bold text-red-700 leading-tight">Spiritual Healing</h4>
+                                <p class="text-[11px] text-gray-500 font-semibold mb-2">Relief from stress and negativity.</p>
+                                <a href="tel:+917905287701" class="bg-red-600 text-white text-[10px] px-4 py-1.5 rounded-full font-bold w-fit hover:bg-red-700 transition">Consult Guru</a>
+                            </div>
                         </div>
-                        <div class="flex flex-col">
-                            <h4 class="text-base font-bold text-red-700 leading-tight">Get Your Love Back</h4>
-                            <p class="text-[11px] text-gray-500 font-semibold mb-2">Reunite with your separated partner.</p>
-                            <a href="tel:+917905287701" class="bg-red-600 text-white text-[10px] px-4 py-1.5 rounded-full font-bold w-fit hover:bg-red-700 transition">Call Now</a>
-                        </div>
-                    </div>
-    
-                    <div class="flex gap-4 items-center p-4 border border-orange-50 rounded-xl hover:shadow-md transition bg-[rgb(255,251,246)] flex-1 group" data-aos="fade-left" data-aos-delay="100">
-                        <div class="realistic-icon-box">
-                            <i class="fas fa-spa text-emerald-600"></i>
-                        </div>
-                        <div class="flex flex-col">
-                            <h4 class="text-base font-bold text-red-700 leading-tight">Spiritual Healing</h4>
-                            <p class="text-[11px] text-gray-500 font-semibold mb-2">Relief from stress and negativity.</p>
-                            <a href="tel:+917905287701" class="bg-red-600 text-white text-[10px] px-4 py-1.5 rounded-full font-bold w-fit hover:bg-red-700 transition">Consult Guru</a>
-                        </div>
-                    </div>
-    
-                    <div class="flex gap-4 items-center p-4 border border-orange-50 rounded-xl hover:shadow-md transition bg-[rgb(255,251,246)] flex-1 group" data-aos="fade-left" data-aos-delay="200">
-                        <div class="realistic-icon-box">
-                            <i class="fas fa-eye text-indigo-600"></i>
-                        </div>
-                        <div class="flex flex-col">
-                            <h4 class="text-base font-bold text-red-700 leading-tight">Psychic Reading</h4>
-                            <p class="text-[11px] text-gray-500 font-semibold mb-2">Know your future path clearly.</p>
-                            <a href="tel:+917905287701" class="bg-red-600 text-white text-[10px] px-4 py-1.5 rounded-full font-bold w-fit hover:bg-red-700 transition">Call Now</a>
+        
+                        <div class="flex gap-4 items-center p-4 border border-orange-50 rounded-xl hover:shadow-md transition bg-[rgb(255,251,246)] flex-1 group">
+                            <div class="realistic-icon-box">
+                                <i class="fas fa-eye text-indigo-600"></i>
+                            </div>
+                            <div class="flex flex-col">
+                                <h4 class="text-base font-bold text-red-700 leading-tight">Psychic Reading</h4>
+                                <p class="text-[11px] text-gray-500 font-semibold mb-2">Know your future path clearly.</p>
+                                <a href="tel:+917905287701" class="bg-red-600 text-white text-[10px] px-4 py-1.5 rounded-full font-bold w-fit hover:bg-red-700 transition">Call Now</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        
+        <script>
+            // Custom Dropdown Logic
+            const dropdownWrapper = document.getElementById('dropdownWrapper');
+            const selectedCountry = document.getElementById('selectedCountry');
+            const dropdownList = document.getElementById('dropdownList');
+            const hiddenInput = document.getElementById('countryCode');
+            const currentFlag = document.getElementById('currentFlag');
+            const currentCode = document.getElementById('currentCode');
     
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+            // Toggle dropdown
+            selectedCountry.addEventListener('click', (e) => {
+                dropdownList.classList.toggle('active');
+            });
     
-            // Get Input Fields
-            const fNameInput    = document.getElementById('firstName');
-            const lNameInput    = document.getElementById('lastName');
-            const emailInput    = document.getElementById('userEmail');
-            const countryCode   = document.getElementById('countryCode');
-            const phoneInput    = document.getElementById('userPhone');
-            const messageInput  = document.getElementById('userMessage');
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!dropdownWrapper.contains(e.target)) {
+                    dropdownList.classList.remove('active');
+                }
+            });
     
-            // Error Elements
-            const emailError = document.getElementById('emailError');
-            const phoneError = document.getElementById('phoneError');
+            // Handle item selection
+            const items = document.querySelectorAll('.dropdown-item');
+            items.forEach(item => {
+                item.addEventListener('click', () => {
+                    const code = item.getAttribute('data-code');
+                    const flag = item.getAttribute('data-flag');
+                    
+                    // Update UI
+                    if (flag === 'un') {
+                        currentFlag.style.display = 'none';
+                    } else {
+                        currentFlag.style.display = 'block';
+                        currentFlag.src = `https://flagcdn.com/w20/${flag}.png`;
+                    }
+                    
+                    currentCode.textContent = code || "Other";
+                    hiddenInput.value = code;
+                    
+                    // Close list
+                    dropdownList.classList.remove('active');
+                });
+            });
     
-            let isValid = true;
-    
-            // Reset previous errors
-            emailError.style.display = 'none';
-            phoneError.style.display = 'none';
-            emailInput.classList.remove('input-invalid');
-            phoneInput.classList.remove('input-invalid');
-            fNameInput.classList.remove('input-invalid');
-    
-            // Name Validation
-            if (fNameInput.value.trim() === "") {
-                fNameInput.classList.add('input-invalid');
-                isValid = false;
-            }
-    
-            // Email validation
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(emailInput.value.trim())) {
-                emailError.style.display = 'block';
-                emailInput.classList.add('input-invalid');
-                isValid = false;
-            }
-    
-            // Phone validation (Flexible 7-15 digits for international support)
-            const phonePattern = /^[0-9]{7,15}$/;
-            if (!phonePattern.test(phoneInput.value.trim())) {
-                phoneError.style.display = 'block';
-                phoneInput.classList.add('input-invalid');
-                isValid = false;
-            }
-    
-            if (isValid) {
-                // Combine First and Last Name
-                const fullName = `${fNameInput.value.trim()} ${lNameInput.value.trim()}`;
-                
-                // Combine Country Code and Phone
-                const fullPhone = `${countryCode.value} ${phoneInput.value.trim()}`;
-    
-                // Prepare mailto content
-                const subject = "New Consultation Request from Website";
-                const body = `Name: ${fullName}%0D%0A` +
-                             `Email: ${emailInput.value.trim()}%0D%0A` +
-                             `Phone: ${fullPhone}%0D%0A` +
-                             `Message:%0D%0A${messageInput.value.trim()}`;
-                
-                const mailtoLink = `mailto:mohitmali411@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-    
-                // Show thank you message
-                const formContainer = document.getElementById('formContainer');
-                formContainer.innerHTML = `
-                    <div class="success-message">
-                        <h3>Thank You, ${fNameInput.value.trim()}!</h3>
-                        <p>Your details have been received.<br>We will connect with you soon.</p>
-                    </div>
-                `;
-    
-                // Open email client (user sends the email manually)
-                window.location.href = mailtoLink;
-            }
-        });
-    </script>
+            // Form Submission Logic
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+        
+                const fNameInput    = document.getElementById('firstName');
+                const lNameInput    = document.getElementById('lastName');
+                const emailInput    = document.getElementById('userEmail');
+                const countryCodeValue = document.getElementById('countryCode').value;
+                const phoneInput    = document.getElementById('userPhone');
+                const messageInput  = document.getElementById('userMessage');
+        
+                const emailError = document.getElementById('emailError');
+                const phoneError = document.getElementById('phoneError');
+        
+                let isValid = true;
+        
+                emailError.style.display = 'none';
+                phoneError.style.display = 'none';
+                emailInput.classList.remove('input-invalid');
+                phoneInput.classList.remove('input-invalid');
+                fNameInput.classList.remove('input-invalid');
+        
+                if (fNameInput.value.trim() === "") {
+                    fNameInput.classList.add('input-invalid');
+                    isValid = false;
+                }
+        
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(emailInput.value.trim())) {
+                    emailError.style.display = 'block';
+                    emailInput.classList.add('input-invalid');
+                    isValid = false;
+                }
+        
+                const phonePattern = /^[0-9]{7,15}$/;
+                if (!phonePattern.test(phoneInput.value.trim())) {
+                    phoneError.style.display = 'block';
+                    phoneInput.classList.add('input-invalid');
+                    isValid = false;
+                }
+        
+                if (isValid) {
+                    const fullName = `${fNameInput.value.trim()} ${lNameInput.value.trim()}`;
+                    const fullPhone = `${countryCodeValue} ${phoneInput.value.trim()}`;
+        
+                    const subject = "New Consultation Request from Website";
+                    const body = `Name: ${fullName}%0D%0A` +
+                                 `Email: ${emailInput.value.trim()}%0D%0A` +
+                                 `Phone: ${fullPhone}%0D%0A` +
+                                 `Message:%0D%0A${messageInput.value.trim()}`;
+                    
+                    const mailtoLink = `mailto:mohitmali411@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+        
+                    const formContainer = document.getElementById('formContainer');
+                    formContainer.innerHTML = `
+                        <div class="success-message">
+                            <h3>Thank You, ${fNameInput.value.trim()}!</h3>
+                            <p>Your details have been received.<br>We will connect with you soon.</p>
+                        </div>
+                    `;
+        
+                    window.location.href = mailtoLink;
+                }
+            });
+        </script>
+   
     <!-- FIND HELPFUL INFORMATION End -->
     
     <style>
