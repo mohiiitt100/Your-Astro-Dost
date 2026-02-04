@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Astro Dost | Vedic Solutions</title>
@@ -148,49 +149,127 @@
         </div>
     </nav>
 
-    <header class="relative bg-gradient-main text-white py-12 lg:py-28 overflow-hidden rounded-br-[50px] md:rounded-br-[100px]">
-        <div class="absolute top-0 right-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-white opacity-10 rounded-full -translate-y-1/2 translate-x-1/4"></div>
+    <header class="relative bg-gradient-main text-white overflow-hidden rounded-br-[50px] md:rounded-br-[100px] min-h-fit lg:h-[85vh] flex items-center">
+        <div class="absolute top-0 right-0 w-[200px] h-[200px] md:w-[450px] md:h-[450px] bg-white opacity-10 rounded-full -translate-y-1/2 translate-x-1/4"></div>
         
-        <div class="container mx-auto px-4 lg:px-6 flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-12 relative z-10">
+        <div class="container mx-auto px-4 lg:px-6 flex flex-col-reverse lg:flex-row items-center gap-4 lg:gap-12 relative z-10 py-4 lg:py-0">
+            
             <div class="w-full lg:w-1/2 text-center lg:text-left" data-aos="fade-right">
-                <div class="inline-block bg-yellow-400 text-black px-3 py-1 md:px-4 rounded-sm font-bold text-[10px] md:text-xs mb-4 uppercase tracking-widest">
+                <div class="inline-block bg-yellow-400 text-black px-3 py-1 rounded-sm font-bold text-[9px] md:text-xs mb-2 uppercase tracking-widest">
                     Remove Blemishes of the Past
                 </div>
-                <h1 class="serif text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 md:mb-6">
-                    For An Amazing Life <br>
+                <h1 class="serif text-2xl md:text-4xl lg:text-5xl font-bold leading-tight mb-2 md:mb-4">
+                    For An Amazing Life <br class="hidden md:block">
                     With Spiritual Healing
                 </h1>
-                <p class="text-yellow-100 text-sm md:text-lg mb-6 md:mb-8 max-w-lg mx-auto lg:mx-0">
-                    Unlock your true potential and find peace with Your Astro Dost's ancient Vedic remedies.
+                <p class="text-yellow-100 text-[11px] md:text-base lg:text-lg mb-4 md:mb-6 max-w-lg mx-auto lg:mx-0 opacity-90">
+                    Unlock your true potential and find peace with Your Astro Dost.
                 </p>
-                <div class="flex items-center bg-white text-orange-600 rounded-full px-2 py-2 w-fit shadow-lg mx-auto lg:mx-0">
-                    <div class="bg-orange-500 text-white w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-lg md:text-xl flex-shrink-0">
+                
+                <div class="flex items-center bg-white text-orange-600 rounded-full px-2 py-1.5 w-fit shadow-lg mx-auto lg:mx-0">
+                    <div class="bg-orange-500 text-white w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm md:text-lg flex-shrink-0">
                         <i class="fas fa-phone-alt animate-pulse"></i>
                     </div>
-                    <div class="px-4 md:px-6">
-                        <span class="block text-[10px] md:text-xs font-bold text-gray-400 uppercase">Call Us Today At</span>
-                        <a href="tel:+917905287701" class="block text-base md:text-xl font-bold whitespace-nowrap hover:text-orange-800 transition">+91 7905287701</a>
+                    <div class="px-3 md:px-5">
+                        <a href="tel:+917905287701" class="block text-xs md:text-lg font-bold whitespace-nowrap">+91 7905287701</a>
                     </div>
                 </div>
             </div>
             
             <div class="w-full lg:w-1/2 relative flex justify-center items-center" data-aos="zoom-in">
                 <div class="absolute inset-0 bg-white/20 blur-3xl rounded-full scale-75 animate-pulse"></div>
-                
                 <video 
-                    autoplay 
-                    muted 
-                    loop 
-                    playsinline 
-                    class="relative z-10 w-full max-w-sm lg:max-w-md rounded-2xl shadow-2xl border-4  object-cover float"
+                    autoplay muted loop playsinline 
+                    class="relative z-10 w-full max-w-[240px] md:max-w-sm lg:max-w-[380px] rounded-2xl shadow-2xl border-2 border-white/30 object-cover float"
                     style="aspect-ratio: 1/1; object-fit: cover;"
                 >
                     <source src="./image/v1 (1) (1).mp4" type="video/mp4">
-                    Your browser does not support the video tag.
                 </video>
             </div>
         </div>
     </header>
+    
+   
+
+    <!-- happy cleint section start secript -->
+    <section class="relative z-30 px-4 mt-6 md:-mt-10 mb-10">
+        <div class="container mx-auto">
+            <div class="bg-white rounded-xl shadow-xl border border-orange-50 p-4 md:p-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 items-center divide-gray-100 md:divide-x">
+                    
+                    <div class="text-center" data-aos="fade-up">
+                        <div class="flex items-center justify-center gap-1">
+                            <span class="text-xl md:text-3xl font-bold text-orange-600 counter" data-target="15">0</span>
+                            <span class="text-orange-600 font-bold">+</span>
+                        </div>
+                        <p class="text-[9px] md:text-xs text-gray-500 font-bold uppercase">Experience</p>
+                    </div>
+    
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex items-center justify-center gap-1">
+                            <span class="text-xl md:text-3xl font-bold text-orange-600 counter" data-target="5000">0</span>
+                            <span class="text-orange-600 font-bold">+</span>
+                        </div>
+                        <p class="text-[9px] md:text-xs text-gray-500 font-bold uppercase">Happy Clients</p>
+                    </div>
+    
+                    <div class="text-center border-l md:border-l-0" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center justify-center gap-1">
+                            <span class="text-xl md:text-3xl font-bold text-orange-600 counter" data-target="10000">0</span>
+                            <span class="text-orange-600 font-bold">+</span>
+                        </div>
+                        <p class="text-[9px] md:text-xs text-gray-500 font-bold uppercase">Consultations</p>
+                    </div>
+    
+                    <div class="text-center border-l md:border-l-0" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex items-center justify-center gap-1">
+                            <span class="text-xl md:text-3xl font-bold text-orange-600 counter" data-target="99">0</span>
+                            <span class="text-orange-600 font-bold">%</span>
+                        </div>
+                        <p class="text-[9px] md:text-xs text-gray-500 font-bold uppercase">Success Rate</p>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // Counter logic (Animation stays the same)
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+    
+        const startCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+    
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 15);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        };
+    
+        const observerOptions = { threshold: 0.5 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    startCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+    
+        counters.forEach(counter => observer.observe(counter));
+    </script>
+     <!-- happy cleint section  secript end  -->
 
     
     <section class="py-16 md:py-24 relative bg-[#FFF9F0] overflow-hidden" id="pricing">
@@ -490,7 +569,7 @@
         }
     </style>
     
-    <section class="py-8 md:py-12 bg-white" id="about">
+    <section class="py-8 md:py-12 bg-white" id="about" >
         <div class="container mx-auto px-4 lg:px-6">
             <div class="flex flex-col-reverse lg:flex-row gap-6 lg:gap-10 items-stretch fixed-height-container">
                 
@@ -771,7 +850,7 @@
             <h2 class="serif text-3xl md:text-4xl font-bold text-center mb-10">Quick Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="rounded-xl overflow-hidden shadow-lg relative h-64 md:h-full min-h-[400px] group">
-                    <img src="https://img.freepik.com/free-photo/romantic-couple-looking-each-other_23-2148028731.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <img src="./image/1.png " class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-red-600 to-transparent opacity-90"></div>
                     <div class="absolute bottom-0 p-6 text-white text-center w-full">
                         <h3 class="serif text-2xl md:text-3xl font-bold mb-2 leading-tight">GET YOUR EX<br>LOVE BACK</h3>
@@ -795,7 +874,7 @@
                 </div>
 
                 <div class="rounded-xl overflow-hidden shadow-lg relative h-64 md:h-full min-h-[400px] group">
-                    <img src="https://img.freepik.com/free-photo/fortune-teller-hands-holding-glass-ball_23-2149346618.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <img src="./image/2.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-orange-600 to-transparent opacity-90"></div>
                     <div class="absolute bottom-0 p-6 text-white text-center w-full">
                         <h3 class="serif text-2xl md:text-3xl font-bold mb-2 leading-tight">PSYCHIC<br>READING SESSION</h3>
@@ -808,6 +887,213 @@
             </div>
         </div>
     </section>
+
+    <!-- testomonial section start  -->
+    <section class="py-10 md:py-16 bg-[#F8FAFC] relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-orange-100 rounded-full blur-3xl opacity-20 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-20 translate-y-1/2"></div>
+    
+        <div class="container mx-auto px-4 lg:px-6 relative z-10">
+            
+            <div class="text-center mb-8 md:mb-12" data-aos="fade-up">
+                <span class="inline-block py-1 px-4 rounded-full bg-white shadow-sm text-orange-600 text-[10px] font-bold uppercase tracking-widest mb-3 border border-orange-50">
+                    Client Stories
+                </span>
+                <h2 class="serif text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                    Trusted by <span class="text-orange-600">1000+</span> Devotees
+                </h2>
+            </div>
+    
+            <div class="relative group px-2 md:px-12">
+                <div class="swiper luxurySwiper pb-12">
+                    <div class="swiper-wrapper">
+                        
+                        <div class="swiper-slide h-auto">
+                            <div class="bg-white p-6 md:p-8 rounded-[2rem] shadow-xl border border-white h-full flex flex-col justify-between">
+                                <div>
+                                    <div class="flex text-yellow-400 text-xs mb-4">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                    <p class="text-gray-600 italic text-sm md:text-base leading-relaxed">"Guruji ki remedies bhot hi simple aur effective hain. Career issues solve ho gaye!"</p>
+                                </div>
+                                <div class="mt-6 flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-orange-600 flex items-center justify-center text-white font-bold text-sm">R</div>
+                                    <div><h4 class="text-sm font-bold text-gray-900">Rahul Sharma</h4><p class="text-[10px] text-orange-500 font-bold uppercase">Business</p></div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="swiper-slide h-auto">
+                            <div class="bg-white p-6 md:p-8 rounded-[2rem] shadow-xl border border-white h-full flex flex-col justify-between">
+                                <div><div class="flex text-yellow-400 text-xs mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="text-gray-600 italic text-sm">"Accuracy itni deep thi ki career path choose karne mein bhot madad mili."</p></div>
+                                <div class="mt-6 flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center text-white font-bold text-sm">P</div>
+                                    <div><h4 class="text-sm font-bold text-gray-900">Priyanka V.</h4><p class="text-[10px] text-orange-500 font-bold uppercase">Software Eng.</p></div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="swiper-slide h-auto">
+                            <div class="bg-white p-6 md:p-8 rounded-[2rem] shadow-xl border border-white h-full flex flex-col justify-between">
+                                <div><div class="flex text-yellow-400 text-xs mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="text-gray-600 italic text-sm">"Marriage problems ke liye best solution mila. Dhanyawad Guruji!"</p></div>
+                                <div class="mt-6 flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-sm">A</div>
+                                    <div><h4 class="text-sm font-bold text-gray-900">Amit Patel</h4><p class="text-[10px] text-orange-500 font-bold uppercase">Entrepreneur</p></div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="swiper-slide h-auto">
+                            <div class="bg-white p-6 md:p-8 rounded-[2rem] shadow-xl border border-white h-full flex flex-col justify-between">
+                                <div><div class="flex text-yellow-400 text-xs mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="text-gray-600 italic text-sm">"Mental stress door karne mein bhot help mili. Highly professional."</p></div>
+                                <div class="mt-6 flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center text-white font-bold text-sm">S</div>
+                                    <div><h4 class="text-sm font-bold text-gray-900">Sneha M.</h4><p class="text-[10px] text-orange-500 font-bold uppercase">Teacher</p></div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="swiper-slide h-auto">
+                            <div class="bg-white p-6 md:p-8 rounded-[2rem] shadow-xl border border-white h-full flex flex-col justify-between">
+                                <div><div class="flex text-yellow-400 text-xs mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="text-gray-600 italic text-sm">"Business mein jo rukawatein thi wo remedies ke baad door ho gayi."</p></div>
+                                <div class="mt-6 flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center text-white font-bold text-sm">V</div>
+                                    <div><h4 class="text-sm font-bold text-gray-900">Vikram K.</h4><p class="text-[10px] text-orange-500 font-bold uppercase">Exporter</p></div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="swiper-slide h-auto">
+                            <div class="bg-white p-6 md:p-8 rounded-[2rem] shadow-xl border border-white h-full flex flex-col justify-between">
+                                <div><div class="flex text-yellow-400 text-xs mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="text-gray-600 italic text-sm">"Very accurate predictions. Gemstone advice worked wonders for me."</p></div>
+                                <div class="mt-6 flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold text-sm">K</div>
+                                    <div><h4 class="text-sm font-bold text-gray-900">Karan Singh</h4><p class="text-[10px] text-orange-500 font-bold uppercase">Manager</p></div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="swiper-slide h-auto">
+                            <div class="bg-white p-6 md:p-8 rounded-[2rem] shadow-xl border border-white h-full flex flex-col justify-between">
+                                <div><div class="flex text-yellow-400 text-xs mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="text-gray-600 italic text-sm">"Best astrology service in Ayodhya. My family trusts Your Astro Dost completely."</p></div>
+                                <div class="mt-6 flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-pink-600 flex items-center justify-center text-white font-bold text-sm">M</div>
+                                    <div><h4 class="text-sm font-bold text-gray-900">Meena Devi</h4><p class="text-[10px] text-orange-500 font-bold uppercase">Social Worker</p></div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="swiper-slide h-auto">
+                            <div class="bg-white p-6 md:p-8 rounded-[2rem] shadow-xl border border-white h-full flex flex-col justify-between">
+                                <div><div class="flex text-yellow-400 text-xs mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="text-gray-600 italic text-sm">"Financial problems were bothering me. The remedies suggested were life-changing."</p></div>
+                                <div class="mt-6 flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-teal-600 flex items-center justify-center text-white font-bold text-sm">D</div>
+                                    <div><h4 class="text-sm font-bold text-gray-900">Deepak Rao</h4><p class="text-[10px] text-orange-500 font-bold uppercase">Trader</p></div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="swiper-slide h-auto">
+                            <div class="bg-white p-6 md:p-8 rounded-[2rem] shadow-xl border border-white h-full flex flex-col justify-between">
+                                <div><div class="flex text-yellow-400 text-xs mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="text-gray-600 italic text-sm">"I was confused about my study field. Prediction was 100% spot on."</p></div>
+                                <div class="mt-6 flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-cyan-600 flex items-center justify-center text-white font-bold text-sm">J</div>
+                                    <div><h4 class="text-sm font-bold text-gray-900">Jatin Sahani</h4><p class="text-[10px] text-orange-500 font-bold uppercase">Student</p></div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="swiper-slide h-auto">
+                            <div class="bg-white p-6 md:p-8 rounded-[2rem] shadow-xl border border-white h-full flex flex-col justify-between">
+                                <div><div class="flex text-yellow-400 text-xs mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="text-gray-600 italic text-sm">"Peaceful guidance. They listen to your problem very carefully before suggesting."</p></div>
+                                <div class="mt-6 flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-sm">H</div>
+                                    <div><h4 class="text-sm font-bold text-gray-900">Harshita G.</h4><p class="text-[10px] text-orange-500 font-bold uppercase">Architect</p></div>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                    <div class="swiper-pagination !-bottom-2"></div>
+                </div>
+    
+                <div class="swiper-button-next custom-fixed-arrow !hidden md:!flex">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="swiper-button-prev custom-fixed-arrow !hidden md:!flex">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        /* Fixed Orange Button Styling */
+        .custom-fixed-arrow {
+            width: 45px !important;
+            height: 45px !important;
+            background-color: #FF5500 !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            box-shadow: 0 4px 15px rgba(255, 85, 0, 0.3) !important;
+            color: white !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            transition: transform 0.2s ease !important;
+            cursor: pointer !important;
+        }
+        .custom-fixed-arrow:hover { transform: translateY(-50%) scale(1.1) !important; }
+        .custom-fixed-arrow i { font-size: 14px !important; color: white !important; }
+        .custom-fixed-arrow::after { display: none !important; }
+        .swiper-button-next { right: -20px !important; }
+        .swiper-button-prev { left: -20px !important; }
+        .swiper-pagination-bullet-active {
+            background: #FF5500 !important;
+            width: 30px !important;
+            border-radius: 6px !important;
+        }
+    </style>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var swiper = new Swiper(".luxurySwiper", {
+                slidesPerView: 1.1, /* Mobile view optimize */
+                centeredSlides: true,
+                spaceBetween: 15,
+                loop: true,
+                speed: 1000,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                    dynamicBullets: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                breakpoints: {
+                    768: { slidesPerView: 2, centeredSlides: false, spaceBetween: 20 },
+                    1024: { slidesPerView: 3, centeredSlides: false, spaceBetween: 30 }
+                }
+            });
+        });
+    </script>
+    <!-- testomonial section end  -->
 
     <!-- why choos us section start  -->
 
@@ -993,6 +1279,6 @@
             });
         });
     </script>
-        
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>  
 </body>
 </html>
